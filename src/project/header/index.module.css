@@ -1,0 +1,11 @@
+.header{
+  background-color: antiquewhite;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+.menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
