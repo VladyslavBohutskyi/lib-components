@@ -5,13 +5,15 @@ interface IAvatar extends IGlobal {
   shadow?: boolean
   shadowColor?: string
   br?: string
-  size?: number
+  size?: string
+  fs?: string
+  color?: string
 }
 
 
 export const Avatar = styled.div<IAvatar>`
-  width: ${(p) => p.size ?? 50}px;
-  height: ${(p) => p.size ?? 50}px;
+  width: ${(p) => p.size ?? '50px'};
+  height: ${(p) => p.size ?? '50px'};
   border-radius: ${(p) => p.br ?? '50%'};
   overflow: hidden;
   display: flex;
@@ -20,16 +22,9 @@ export const Avatar = styled.div<IAvatar>`
   box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? 'grey'}` : false};
   color: ${(p) => p.color};
   background-color: ${(p) => p.bg};
-  padding:
-  ${(p) => p.pt ?? 0}px
-  ${(p) => p.pr ?? 0}px 
-  ${(p) => p.pb ?? 0}px 
-  ${(p) => p.pl ?? 0}px;
-  margin:
-  ${(p) => p.mt ?? 0}px
-  ${(p) => p.mr ?? 0}px 
-  ${(p) => p.mb ?? 0}px 
-  ${(p) => p.ml ?? 0}px;
+  font-size: ${(p) => p.fs ?? '16px'};
+  padding: ${(p) => p.pt ?? '0px'} ${(p) => p.pr ?? '0px'} ${(p) => p.pb ?? '0px'} ${(p) => p.pl ?? '0px'};
+  margin: ${(p) => p.mt ?? '0px'} ${(p) => p.mr ?? '0px'} ${(p) => p.mb ?? '0px'} ${(p) => p.ml ?? '0px'};
 `
 
 export const Image = styled.img`

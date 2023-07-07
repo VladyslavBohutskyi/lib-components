@@ -15,11 +15,11 @@ const meenuItems = [
 
 const Header = () => {
   return (
-    <LHeader color={'#F6EFE8'}>
+    <LHeader bg={'#F6EFE8'}>
       <Container>
-        <Row pt={15} pb={15}>
+        <Row pt={'15px'} pb={'15px'}> 
           <Box display={'flex'}>
-            <Avatar shadow size={70} mr={20}>
+            <Avatar shadow size={'70px'} mr={'20px'}>
               <Image src="/logo.jpg" alt="logo" />
             </Avatar>
             <Menu display={'flex'}>

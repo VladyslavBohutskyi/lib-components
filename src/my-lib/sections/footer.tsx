@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { IBox } from '../layout'
 
-interface IHeader extends IBox {
+interface IFooter extends IBox {
   minHeight?: string
 }
 
-export const LHeader = styled.header<IHeader>`
+export const LFooter = styled.footer<IFooter>`
 display: ${(p) => p.display ?? 'block'};
 justify-content: ${(p) => p.justifyContent ?? 'center'};
 border: ${(p) => p.border};
