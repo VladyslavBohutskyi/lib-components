@@ -7,7 +7,6 @@ interface IAvatar extends IGlobal {
   br?: string
   size?: string
   fs?: string
-  color?: string
 }
 
 
@@ -20,16 +19,32 @@ export const Avatar = styled.div<IAvatar>`
   align-items: center;
   justify-content: center;
   box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? 'grey'}` : false};
-  color: ${(p) => p.color};
-  background-color: ${(p) => p.bg};
   font-size: ${(p) => p.fs ?? '16px'};
-  padding: ${(p) => p.pt ?? '0px'} ${(p) => p.pr ?? '0px'} ${(p) => p.pb ?? '0px'} ${(p) => p.pl ?? '0px'};
-  margin: ${(p) => p.mt ?? '0px'} ${(p) => p.mr ?? '0px'} ${(p) => p.mb ?? '0px'} ${(p) => p.ml ?? '0px'};
+  color: ${(p) => p.color};
+  background: ${(p) => p.bg};
+  padding: ${(p) => p.p}; 
+  margin: ${(p) => p.m};
+  padding-top:  ${(p) => p.pt};
+  padding-right:  ${(p) => p.pr};
+  padding-bottom:  ${(p) => p.pb};
+  padding-left:  ${(p) => p.pl};
+  margin-top:  ${(p) => p.mt};
+  margin-right:  ${(p) => p.mr};
+  margin-bottom:  ${(p) => p.mb};
+  margin-left:  ${(p) => p.ml};
 `
 
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+export interface IImage{
+  w?: string
+  h?: string
+  of?: 'contain'|'cover'|'fill'|'inherit'|'initial'|'none'|'revert'|'scale-down'|'unset'
+  op?: 'center'|'top'|'bottom'|'right'|'left'
+  filter?: string
+}
+export const Image = styled.img<IImage>`
+  width:  ${(p) => p.w ?? '100%'};
+  height:  ${(p) => p.h ?? '100%'};
+  object-fit: ${(p) => p.of ?? 'cover'};
+  object-position: ${(p) => p.op ?? 'center'};
+  filter:  ${(p) => p.filter};
 `
