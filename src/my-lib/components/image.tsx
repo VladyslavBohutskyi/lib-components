@@ -32,6 +32,7 @@ export const Avatar = styled.div<IAvatar>`
   margin-right:  ${(p) => p.mr};
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
+  ${(p) => p.sx}
 `
 
 export interface IImage{

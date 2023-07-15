@@ -11,4 +11,5 @@ export interface IGlobal {
   mr?: string
   mb?: string
   ml?: string
+  sx?: string
 }

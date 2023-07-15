@@ -23,6 +23,7 @@ export const Menu = styled.ul<IMenu>`
   margin-right:  ${(p) => p.mr};
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
+  ${(p) => p.sx}
 `
 
 
@@ -48,6 +49,7 @@ export const MenuItem = styled.li<IMenuItem>`
   margin-right:  ${(p) => p.mr};
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
+  ${(p) => p.sx}
   a{
     color: ${(p) => p.color};
     text-decoration: none;
