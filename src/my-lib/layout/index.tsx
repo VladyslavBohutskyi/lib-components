@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { IGlobal } from '../models/global';
 
 export interface IRow extends IGlobal {
-  display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root' 
+  display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
   justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignItem?: 'center' | 'flex-end' | 'flex-start'
-  flexWrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
+  alignitems?: 'center' | 'flex-end' | 'flex-start'
+  flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
 }
 export const Row = styled.div<IRow>`
-  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItem};
+  align-items: ${(p) => p.alignitems};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -29,22 +29,22 @@ export const Row = styled.div<IRow>`
 
 export interface IContainer extends IBox {
   flex?: string
-  fullWidth?: boolean
+  fullwidth?: string
 }
 
 export const Container = styled.div<IContainer>`
-  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex: ${(p) => p.flex};
-  max-width: ${(p) => p.fullWidth ? '100%' : '1300px'};
+  max-width: ${(p) => p.fullwidth ? '100%' : '1300px'};
   width: 100%;
   margin: auto;
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.shadow};
+  box-shadow: ${(p) => p.boxShadow};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItem ?? 'center'};
+  align-items: ${(p) => p.alignitems ?? 'center'};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -64,18 +64,19 @@ export const Container = styled.div<IContainer>`
 
 export interface IBox extends IRow {
   br?: string
-  shadow?: string
+  boxShadow?: string
   border?: string
+
 }
 export const Box = styled.div<IBox>`
-  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.shadow};
+  box-shadow:${(p) => p.boxShadow};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItem ?? 'center'};
+  align-items: ${(p) => p.alignitems ?? 'center'};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -94,17 +95,17 @@ export const Box = styled.div<IBox>`
 export interface ICol extends IBox {
   size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
   spacing?: string
-  flexWrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
+  flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
 }
 export const Col = styled.div<ICol>`
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.shadow};
+  box-shadow: ${(p) => p.boxShadow};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItem ?? 'center'};
-  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
+  align-items: ${(p) => p.alignitems ?? 'center'};
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex-basis:${(p) => p.size == 1 ? `calc(8.3% - ${p.spacing ?? '15px'})` :
     p.size == 2 ? `calc(16.6% - ${p.spacing ?? '15px'})` :
       p.size == 3 ? `calc(25% - ${p.spacing ?? '15px'})` :
@@ -133,19 +134,19 @@ export const Col = styled.div<ICol>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 `
-interface ISection extends IBox{
+interface ISection extends IBox {
   flex?: string
 }
 export const Section = styled.section<ISection>`
-  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex: ${(p) => p.flex};
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.shadow};
+  box-shadow: ${(p) => p.boxShadow};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItem ?? 'center'};
+  align-items: ${(p) => p.alignitems ?? 'center'};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

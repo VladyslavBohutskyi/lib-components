@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IGlobal } from '../models/global';
 
 interface IAvatar extends IGlobal {
-  shadow?: boolean
+  shadow?: string
   shadowColor?: string
   br?: string
   size?: string

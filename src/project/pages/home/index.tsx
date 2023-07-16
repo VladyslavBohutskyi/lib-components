@@ -22,7 +22,7 @@ const Home = () => {
         </Container>
       </Section>
       <Section bg="blue">
-        <Container bg="yellow">
+        <Container bg="yellow"  fullwidth={'true'}>
           <H1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quam fugit exercitationem?</H1>
         </Container>
       </Section>

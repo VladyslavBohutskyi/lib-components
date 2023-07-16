@@ -3,7 +3,7 @@ import { IGlobal } from '../models/global';
 
 
 interface ICard extends IGlobal {
-  shadow?: boolean
+  shadow?: string
   shadowColor?: string
   height?: string
   minH?: string
@@ -14,7 +14,7 @@ interface ICard extends IGlobal {
   flexDirection?: 'column'| 'column-reverse'| 'row' | 'revert' | 'row-revese'
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
   justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignItems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitemss?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
   
 
 }
@@ -29,7 +29,7 @@ interface ICardInner extends IGlobal {
   flexDirection?: 'column'| 'column-reverse'| 'row' | 'revert' | 'row-revese'
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
   justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignItems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitemss?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
   flex?: string
 }
 
@@ -65,7 +65,7 @@ export const CardHeader = styled.div<ICardInner>`
   height: ${(p) => p.height};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifyContent};
-  align-items: ${(p) => p.alignItems};
+  align-items: ${(p) => p.alignitemss};
   text-align: ${(p) => p.textAlign};
   height: ${(p) => p.height};
   width: ${(p) => p.width};
@@ -91,7 +91,7 @@ export const CardContent = styled.div<ICardInner>`
   flex: ${(p) => p.flex ?? '1'};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifyContent};
-  align-items: ${(p) => p.alignItems};
+  align-items: ${(p) => p.alignitemss};
   text-align: ${(p) => p.textAlign};
   height: ${(p) => p.height};
   width: ${(p) => p.width};
@@ -116,7 +116,7 @@ export const CardFooter = styled.div<ICardInner>`
   flex-direction: ${(p) => p.flexDirection};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifyContent ?? 'space-between'};
-  align-items: ${(p) => p.alignItems};
+  align-items: ${(p) => p.alignitemss};
   text-align: ${(p) => p.textAlign};
   height: ${(p) => p.height};
   width: ${(p) => p.width};

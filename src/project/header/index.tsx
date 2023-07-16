@@ -17,15 +17,15 @@ const Header = () => {
   return (
     <LHeader bg={'#F6EFE8'}>
       <Container>
-        <Row pt={'15px'} pb={'15px'} alignItem={'center'}> 
+        <Row pt={'15px'} pb={'15px'} alignitems={'center'}> 
           <Box display={'flex'}>
-            <Avatar shadow size={'70px'} mr={'20px'}>
+            <Avatar  size={'70px'} mr={'20px'}>
               <Image src="/logo.jpg" alt="logo" />
             </Avatar>
             <Menu display={'flex'}>
               {
                 meenuItems.map((e) => (
-                  <MenuItem key={e.link} textTransform={'uppercase'} fs={'18px'} color={'black'} ml={'20px'}>
+                  <MenuItem key={e.link} texttransform={'uppercase'} fs={'18px'} color={'black'} ml={'20px'}>
                     <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
                 ))
               }

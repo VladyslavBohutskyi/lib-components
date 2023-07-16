@@ -13,7 +13,7 @@ const Footer = () => {
         <Row>
 
           <Col size={3}>
-            <Avatar size={'70px'} shadow>UI</Avatar>
+            <Avatar size={'70px'}>UI</Avatar>
           </Col>
 
           <Col size={3}>

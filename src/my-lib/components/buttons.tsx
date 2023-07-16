@@ -7,22 +7,22 @@ interface IButton extends IGlobal {
   ls?: string
   br?: string
   border?: string
-  shadow?: boolean
+  shadow?: string
   shadowColor?: string
   boxShadow?: string
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
   justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignItems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitemss?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
   minHeight?: string
   minWidth?: string
   hover?: 'reverse' | 'reverseBorder' | 'opacity'
   opacity?: number
-  textTransform?: 'uppercase' | 'lowercase'| 'capitalize' | 'unset'
+  texttransform?: 'uppercase' | 'lowercase'| 'capitalize' | 'unset'
 }
 
 
 export const Button = styled.button<IButton>`
-  text-transform: ${(p) => p.textTransform};
+  text-transform: ${(p) => p.texttransform};
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
@@ -35,7 +35,7 @@ export const Button = styled.button<IButton>`
   font-weight: ${(p) => p.fw};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
-  align-items: ${(p) => p.alignItems ?? 'center'}; 
+  align-items: ${(p) => p.alignitemss ?? 'center'}; 
   min-height: ${(p) => p.minHeight};
   min-width: ${(p) => p.minWidth};
   color: ${(p) => p.color ?? 'white'};
@@ -52,7 +52,6 @@ export const Button = styled.button<IButton>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 &:hover {
-  box-shadow: none;
   background-color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' ? p.color ?? 'white' : false};
   color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' ? p.bg ?? '#8696FE' : false};
   border: ${(p) => p.hover === 'reverse' ? `1px solid ${p.color ?? 'white'}` : false};
@@ -67,7 +66,7 @@ interface IBtnLink extends IButton {
 
 export const BtnLink = styled.a<IBtnLink>`
   text-decoration: ${(p) => p.textDecoration ?? 'none'};
-  text-transform: ${(p) => p.textTransform};
+  text-transform: ${(p) => p.texttransform};
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
@@ -80,7 +79,7 @@ export const BtnLink = styled.a<IBtnLink>`
   font-weight: ${(p) => p.fw};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifyContent ?? 'center'};
-  align-items: ${(p) => p.alignItems ?? 'center'}; 
+  align-items: ${(p) => p.alignitemss ?? 'center'}; 
   min-height: ${(p) => p.minHeight};
   min-width: ${(p) => p.minWidth};
   color: ${(p) => p.color ?? 'white'};
@@ -97,7 +96,6 @@ export const BtnLink = styled.a<IBtnLink>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 &:hover {
-  box-shadow: none;
   background-color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' ? p.color ?? 'white' : false};
   color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' ? p.bg ?? '#8696FE' : false};
   border: ${(p) => p.hover === 'reverse' ? `1px solid ${p.color ?? 'white'}` : false};
