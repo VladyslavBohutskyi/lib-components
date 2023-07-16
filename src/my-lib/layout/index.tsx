@@ -116,7 +116,7 @@ export const Col = styled.div<ICol>`
                   p.size == 9 ? `calc(75% - ${p.spacing ?? '15px'})` :
                     p.size == 10 ? `calc(83.3% - ${p.spacing ?? '15px'})` :
                       p.size == 11 ? `calc(91.6% - ${p.spacing ?? '15px'})` :
-                        p.size == 12 ? `calc(100% - ${p.spacing ?? '15px'})` :
+                        p.size == 12 ? `calc(100% - ${p.spacing})` :
                           'calc(100%)'
   };
   color: ${(p) => p.color};
