@@ -7,8 +7,8 @@ import { log } from 'console';
 
 interface IPopUpContent extends IGlobal {
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitemss?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
   flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
   w?: string
   h?: string
@@ -37,8 +37,8 @@ export const PopUpContent = styled.div<IPopUpContent>`
   flex-wrap:  ${(p) => p.flexwrap};
 /////////////////////////////////
   display: ${(p) => p.display};
-  justify-content: ${(p) => p.justifyContent};
-  align-items: ${(p) => p.alignitemss}; 
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems}; 
   color: ${(p) => p.color};
   background: ${(p) => p.bg ?? 'white'};
   padding: ${(p) => p.p}; 

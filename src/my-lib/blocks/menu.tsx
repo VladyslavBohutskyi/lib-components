@@ -4,13 +4,13 @@ import { IGlobal } from '../models/global';
 
 interface IMenu extends IGlobal {
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitemss?: 'center'| 'flex-end' | 'flex-start' | 'left' | 'right'
+  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitems?: 'center'| 'flex-end' | 'flex-start' | 'left' | 'right'
 }
 export const Menu = styled.ul<IMenu>`
   display: ${(p) => p.display ?? 'flex'};
-  justify-content: ${(p) => p.justifyContent};
-  align-items: ${(p) => p.alignitemss ?? 'center'}; 
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems ?? 'center'}; 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

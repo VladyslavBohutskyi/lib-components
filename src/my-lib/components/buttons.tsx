@@ -11,9 +11,9 @@ interface IButton extends IGlobal {
   shadowColor?: string
   boxShadow?: string
   display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifyContent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitemss?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  minHeight?: string
+  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  alignitems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
+  mheight?: string
   minWidth?: string
   hover?: 'reverse' | 'reverseBorder' | 'opacity'
   opacity?: number
@@ -34,9 +34,9 @@ export const Button = styled.button<IButton>`
   border: ${(p) => p.border ?? `1px solid ${p.bg ?? '#8696FE'}`};
   font-weight: ${(p) => p.fw};
   display: ${(p) => p.display ?? 'flex'};
-  justify-content: ${(p) => p.justifyContent ?? 'center'};
-  align-items: ${(p) => p.alignitemss ?? 'center'}; 
-  min-height: ${(p) => p.minHeight};
+  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  align-items: ${(p) => p.alignitems ?? 'center'}; 
+  min-height: ${(p) => p.mheight};
   min-width: ${(p) => p.minWidth};
   color: ${(p) => p.color ?? 'white'};
   background: ${(p) => p.bg ?? '#8696FE'};
@@ -78,9 +78,9 @@ export const BtnLink = styled.a<IBtnLink>`
   border: ${(p) => p.border ?? `1px solid ${p.bg ?? '#8696FE'}`};
   font-weight: ${(p) => p.fw};
   display: ${(p) => p.display ?? 'flex'};
-  justify-content: ${(p) => p.justifyContent ?? 'center'};
-  align-items: ${(p) => p.alignitemss ?? 'center'}; 
-  min-height: ${(p) => p.minHeight};
+  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  align-items: ${(p) => p.alignitems ?? 'center'}; 
+  min-height: ${(p) => p.mheight};
   min-width: ${(p) => p.minWidth};
   color: ${(p) => p.color ?? 'white'};
   background: ${(p) => p.bg ?? '#8696FE'};
