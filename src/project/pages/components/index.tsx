@@ -1,5 +1,6 @@
 import { Button } from "../../../my-lib/components/buttons"
 import { Form, Input, Textarea } from "../../../my-lib/components/form"
+import { List, ListItem } from "../../../my-lib/components/list"
 import { Box, Container } from "../../../my-lib/layout"
 
 const Components = () => {
@@ -20,6 +21,14 @@ const Components = () => {
           <option value="audi">Audi</option>
         </select>
       </Form>
+
+      <List customstyle={'"*"'} styletype='lower-greek'>
+        Title list
+        <ListItem>Lorem, ipsum.</ListItem>
+        <ListItem>Lorem, ipsum.</ListItem>
+        <ListItem>Lorem, ipsum dolor.</ListItem>
+        <ListItem>Lorem ipsum dolor sit.</ListItem>
+      </List>
     </Container>
   )
 }
