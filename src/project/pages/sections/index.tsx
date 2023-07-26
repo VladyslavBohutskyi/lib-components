@@ -4,32 +4,39 @@ const Sections = () => {
   const [tabIndex, setTabIndex] = useState(0)
   const dataTabs = [
     {
-      tab: 0,
+      tab: 'tab 0',
       content: 'Lorem ipsum 0000 consectetur adipisicing elit Nobis, sint harum aliquam incidunt maxime quam! Ut at quis ipsa voluptates.'
     },
     {
-      tab: 1,
+      tab: 'tab 1',
       content: 'Lorem ipsum 1111 consectetur adipisicing elit Nobis, sint harum aliquam incidunt maxime quam! Ut at quis ipsa voluptates.'
     },
     {
-      tab: 2,
+      tab: 'tab 2',
       content: 'Lorem ipsum 2222 consectetur adipisicing elit Nobis, sint harum aliquam incidunt maxime quam! Ut at quis ipsa voluptates.'
     },
     {
-      tab: 3,
+      tab: 'tab 3',
       content: 'Lorem ipsum 3333 consectetur adipisicing elit Nobis, sint harum aliquam incidunt maxime quam! Ut at quis ipsa voluptates.'
     },
   ]
 
-  console.log(tabIndex);
-
-
   return (
-    <TabsWrapper mw="600px" m="auto" bg="grey" p="20px" mt="30px" shadow="true">
-      <Tabs p="10px" sx="border-bottom: 2px solid black; text-transform: uppercase" mb="20px">
+    <TabsWrapper mw="600px" m="auto" bg="white" mt="30px">
+      <Tabs sx="text-transform: uppercase;" fullW="true">
         {
           dataTabs.map((e, index) => (
-            <Tab key={index} p="10px 20px" onClick={() => setTabIndex(index)}>{e.tab}</Tab>
+            tabIndex === index
+              ?
+              <Tab key={index} onClick={() => setTabIndex(index)}
+                  tabs="classic" active="true">
+                {e.tab}
+              </Tab>
+              :
+              <Tab tabs="classic" key={index} onClick={() => setTabIndex(index)}
+              >
+                {e.tab}
+              </Tab>
           ))
         }
       </Tabs>
@@ -37,7 +44,7 @@ const Sections = () => {
         dataTabs.map((e, index) => (
           tabIndex === index
             ?
-            <TabsContent p="20px" >
+            <TabsContent p="20px" key={index}>
               {e.content}
             </TabsContent>
             :

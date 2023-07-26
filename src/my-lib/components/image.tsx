@@ -7,10 +7,12 @@ interface IAvatar extends IGlobal {
   br?: string
   size?: string
   fs?: string
+  shadowHover?: string
 }
 
 
 export const Avatar = styled.div<IAvatar>`
+  transition: all 0.3s ease-in-out;
   width: ${(p) => p.size ?? '50px'};
   height: ${(p) => p.size ?? '50px'};
   border-radius: ${(p) => p.br ?? '50%'};
@@ -18,7 +20,7 @@ export const Avatar = styled.div<IAvatar>`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? 'grey'}` : false};
+  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? 'pink'}` : false};
   font-size: ${(p) => p.fs ?? '16px'};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -33,6 +35,11 @@ export const Avatar = styled.div<IAvatar>`
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
+  &:hover{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: ${(p) => p.shadowHover ? `0px 0px 3px 5px ${p.shadowColor ?? 'pink'}` : false};
+  }
 `
 
 export interface IImage{
