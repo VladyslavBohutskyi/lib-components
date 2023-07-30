@@ -1,13 +1,9 @@
 import styled from 'styled-components';
-import { IGlobal } from '../models/global';
+import { IDisplay, IGlobal } from '../models/global';
 
-export interface IRow extends IGlobal {
-  display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitems?: 'center' | 'flex-end' | 'flex-start'
-  flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
-  flexDirection?: 'column' | 'row' | 'row-reverse' | 'column-reverse'
+export interface IRow extends IGlobal, IDisplay {
 }
+
 export const Row = styled.div<IRow>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'flex'};
@@ -37,12 +33,12 @@ export interface IContainer extends IBox {
 export const Container = styled.div<IContainer>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex: ${(p) => p.flex};
-  max-width: ${(p) => p.fullwidth === 'true' ? '100%' : '1300px'};
-  width: 100%;
-  margin: auto;
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifycontent};
   flex-direction: ${(p) => p.flexDirection};
+  max-width: ${(p) => p.fullwidth === 'true' ? '100%' : '1300px'};
+  width: 100%;
+  margin: auto;
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
@@ -64,12 +60,12 @@ export const Container = styled.div<IContainer>`
 `
 
 
-
-export interface IBox extends IRow {
+export interface IBox extends IGlobal, IDisplay {
   br?: string
   boxShadow?: string
   border?: string
   }
+
 export const Box = styled.div<IBox>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'block'};
@@ -101,15 +97,14 @@ export interface ICol extends IBox {
   flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
 }
 export const Col = styled.div<ICol>`
+  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'block'};
   justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
+  flex-direction: ${(p) => p.flexDirection};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-  justify-content: ${(p) => p.justifycontent};
-  align-items: ${(p) => p.alignitems};
-  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
-  flex-direction: ${(p) => p.flexDirection};
   flex-basis:${(p) => p.size == 1 ? `calc(8.3% - ${p.spacing ?? '15px'})` :
     p.size == 2 ? `calc(16.6% - ${p.spacing ?? '15px'})` :
       p.size == 3 ? `calc(25% - ${p.spacing ?? '15px'})` :

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import { IGlobal } from '../models/global';
+import { IDisplay, IGlobal } from '../models/global';
 
 
-interface IMenu extends IGlobal {
-  display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitems?: 'center'| 'flex-end' | 'flex-start' | 'left' | 'right'
+interface IMenu extends IGlobal, IDisplay {
+
 }
 export const Menu = styled.ul<IMenu>`
+  flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
+  flex-direction: ${(p) => p.flexDirection};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

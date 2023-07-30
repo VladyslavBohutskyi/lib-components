@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IGlobal } from '../models/global';
+import { IGlobal, IProportions } from '../models/global';
 
 interface IAvatar extends IGlobal {
   shadow?: string
@@ -10,6 +10,11 @@ interface IAvatar extends IGlobal {
   shadowHover?: string
 }
 
+export interface IImage extends IProportions{
+  of?: 'contain'|'cover'|'fill'|'inherit'|'initial'|'none'|'revert'|'scale-down'|'unset'
+  op?: 'center'|'top'|'bottom'|'right'|'left'
+  filter?: string
+}
 
 export const Avatar = styled.div<IAvatar>`
   transition: all 0.3s ease-in-out;
@@ -42,16 +47,13 @@ export const Avatar = styled.div<IAvatar>`
   }
 `
 
-export interface IImage{
-  w?: string
-  h?: string
-  of?: 'contain'|'cover'|'fill'|'inherit'|'initial'|'none'|'revert'|'scale-down'|'unset'
-  op?: 'center'|'top'|'bottom'|'right'|'left'
-  filter?: string
-}
 export const Image = styled.img<IImage>`
   width:  ${(p) => p.w ?? '100%'};
   height:  ${(p) => p.h ?? '100%'};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
   object-fit: ${(p) => p.of ?? 'cover'};
   object-position: ${(p) => p.op ?? 'center'};
   filter:  ${(p) => p.filter};

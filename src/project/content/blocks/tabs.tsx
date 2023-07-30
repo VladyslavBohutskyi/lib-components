@@ -24,7 +24,7 @@ const BlocksTabs = () => {
   ]
 
   return (
-    <TabsWrapper mw="600px" m="auto" bg="white" mt="30px">
+    <TabsWrapper maxW='600px' m="auto" bg="white" mt="30px">
       <Tabs sx="text-transform: uppercase;" fullW="true">
         {
           dataTabs.map((e, index) => (

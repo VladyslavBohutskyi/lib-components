@@ -7,7 +7,7 @@ const ComponentsForm = () => {
   return (
     <Container mt="35px">
       <Form maxW='600px' m='auto' shadow="true" minH="200px" br="6px" p="30px">
-        <Box display='flex'>
+        <Box display='flex' justifycontent='space-between'>
           <Input type="text" placeholder="Fill name" w="49%" />
           <Input type="text" placeholder="Fill lust name" w="49%" />
         </Box>

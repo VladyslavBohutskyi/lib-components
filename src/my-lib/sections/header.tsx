@@ -2,18 +2,19 @@ import styled from 'styled-components'
 import { IBox } from '../layout'
 
 interface IHeader extends IBox {
-  mheight?: string
+  minH?: string
 }
 
 export const LHeader = styled.header<IHeader>`
+flex-wrap: ${(p) => p.flexwrap};
 display: ${(p) => p.display ?? 'block'};
 justify-content: ${(p) => p.justifycontent ?? 'center'};
+align-items: ${(p) => p.alignitems ?? 'center'};
+flex-direction: ${(p) => p.flexDirection};
 border: ${(p) => p.border};
 border-radius: ${(p) => p.br};
 box-shadow: ${(p) => p.boxShadow};
-justify-content: ${(p) => p.justifycontent ?? 'space-between'};
-align-items: ${(p) => p.alignitems ?? 'center'};
-min-height: ${(p) => p.mheight ?? '100px'};
+min-height: ${(p) => p.minH ?? '100px'};
 color: ${(p) => p.color};
 background: ${(p) => p.bg};
 padding: ${(p) => p.p}; 

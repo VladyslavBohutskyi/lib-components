@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { IGlobal } from '../models/global';
+import { IDisplay, IGlobal, IProportions } from '../models/global';
 
-interface IButton extends IGlobal {
+interface IButton extends IGlobal, IDisplay, IProportions {
   fs?: string
   fw?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   ls?: string
@@ -10,16 +10,10 @@ interface IButton extends IGlobal {
   shadow?: string
   shadowColor?: string
   boxShadow?: string
-  display?: 'flex' | 'block' | 'inline-flex' | 'inline-block' | 'inline' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root'
-  justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  alignitems?: 'center' | 'flex-end' | 'flex-start' | 'left' | 'right'
-  mheight?: string
-  minWidth?: string
   hover?: 'reverse' | 'reverseBorder' | 'opacity'
   opacity?: number
   texttransform?: 'uppercase' | 'lowercase'| 'capitalize' | 'unset'
 }
-
 
 export const Button = styled.button<IButton>`
   text-transform: ${(p) => p.texttransform};
@@ -33,11 +27,17 @@ export const Button = styled.button<IButton>`
   box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? (p.bg ?? '#8696FE')}` : false};
   border: ${(p) => p.border ?? `1px solid ${p.bg ?? '#8696FE'}`};
   font-weight: ${(p) => p.fw};
+  flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'center'};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  min-height: ${(p) => p.mheight};
-  min-width: ${(p) => p.minWidth};
+  flex-direction: ${(p) => p.flexDirection};
+  height: ${(p) => p.h};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
   color: ${(p) => p.color ?? 'white'};
   background: ${(p) => p.bg ?? '#8696FE'};
   padding: ${(p) => p.p ?? '10px 15px'}; 
@@ -58,11 +58,9 @@ export const Button = styled.button<IButton>`
   opacity: ${(p) => p.hover === 'opacity' ? 0.8 : false}
 }`
 
-
 interface IBtnLink extends IButton {
   textDecoration?: 'none' | 'underline' | 'overline' | 'line-through'
 }
-
 
 export const BtnLink = styled.a<IBtnLink>`
   text-decoration: ${(p) => p.textDecoration ?? 'none'};
@@ -77,11 +75,17 @@ export const BtnLink = styled.a<IBtnLink>`
   box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? (p.bg ?? '#8696FE')}` : false};
   border: ${(p) => p.border ?? `1px solid ${p.bg ?? '#8696FE'}`};
   font-weight: ${(p) => p.fw};
+  flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'center'};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  min-height: ${(p) => p.mheight};
-  min-width: ${(p) => p.minWidth};
+  flex-direction: ${(p) => p.flexDirection};
+  height: ${(p) => p.h};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
   color: ${(p) => p.color ?? 'white'};
   background: ${(p) => p.bg ?? '#8696FE'};
   padding: ${(p) => p.p ?? '10px 15px'}; 
