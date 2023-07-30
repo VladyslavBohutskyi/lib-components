@@ -38,7 +38,7 @@ export const List = styled.ul<IList>`
 `
 
 export const ListItem = styled.li<IListItem>`
-position: relative;
+  position: relative;
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

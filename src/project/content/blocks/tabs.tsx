@@ -1,6 +1,8 @@
 import { Tab, Tabs, TabsContent, TabsWrapper } from "../../../my-lib/blocks/tabs"
 import { useState } from 'react'
-const Sections = () => {
+
+
+const BlocksTabs = () => {
   const [tabIndex, setTabIndex] = useState(0)
   const dataTabs = [
     {
@@ -56,4 +58,4 @@ const Sections = () => {
 }
 
 
-export default Sections
+export default BlocksTabs

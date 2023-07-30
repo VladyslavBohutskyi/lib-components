@@ -8,9 +8,9 @@ import { LFooter } from "../../my-lib/sections/footer"
 
 const Footer = () => {
   return (
-    <LFooter bg={'#F6EFE8'} pt={'30px'} pb={'30px'}>
+    <LFooter bg={'#FFFFFF'} pt={'30px'} pb={'30px'}>
       <Container>
-        <Row>
+        <Row flexwrap='nowrap'>
 
           <Col size={3}>
             <Avatar shadowHover="true" size={'70px'} shadow="true" sx={'border: 4px solid pink;'}>UI</Avatar>

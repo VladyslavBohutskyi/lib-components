@@ -48,10 +48,10 @@ table {
   box-sizing: border-box;
 }
 /* end reset  */
-.App{
+/* .App{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 

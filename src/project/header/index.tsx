@@ -7,7 +7,7 @@ import { LHeader } from "../../my-lib/sections/header"
 
 
 const meenuItems = [
-  { link: '/', name: 'Home' },
+  { link: '/layout', name: 'Layout' },
   { link: '/components', name: 'Components' },
   { link: '/blocks', name: 'Blocks' },
   { link: '/sections', name: 'Sections' },
@@ -15,17 +15,19 @@ const meenuItems = [
 
 const Header = () => {
   return (
-    <LHeader bg={'#F6EFE8'}>
+    <LHeader bg={'#FFFFFF'}>
       <Container>
-        <Row pt={'15px'} pb={'15px'} alignitems={'center'}> 
+        <Row pt={'15px'} pb={'15px'} alignitems={'center'}>
           <Box display={'flex'}>
-            <Avatar  size={'70px'} mr={'20px'}>
-              <Image src="/logo.jpg" alt="logo" />
-            </Avatar>
+            <NavLink to={'/'}>
+              <Avatar size={'70px'} mr={'20px'}>
+                <Image src="/logo.jpg" alt="logo" />
+              </Avatar>
+            </NavLink>
             <Menu display={'flex'}>
               {
                 meenuItems.map((e) => (
-                  <MenuItem key={e.link} texttransform={'uppercase'} fs={'18px'} color={'black'} ml={'20px'}>
+                  <MenuItem key={e.link} texttransform={'capitalize'} fs={'18px'} color={'black'} ml={'20px'}>
                     <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
                 ))
               }

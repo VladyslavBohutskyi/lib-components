@@ -6,12 +6,14 @@ export interface IRow extends IGlobal {
   justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
   alignitems?: 'center' | 'flex-end' | 'flex-start'
   flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
+  flexDirection?: 'column' | 'row' | 'row-reverse' | 'column-reverse'
 }
 export const Row = styled.div<IRow>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
+  flex-direction: ${(p) => p.flexDirection};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -29,22 +31,23 @@ export const Row = styled.div<IRow>`
 
 export interface IContainer extends IBox {
   flex?: string
-  fullwidth?: string
+  fullwidth?: string 
 }
 
 export const Container = styled.div<IContainer>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex: ${(p) => p.flex};
-  max-width: ${(p) => p.fullwidth ? '100%' : '1300px'};
+  max-width: ${(p) => p.fullwidth === 'true' ? '100%' : '1300px'};
   width: 100%;
   margin: auto;
   display: ${(p) => p.display ?? 'block'};
-  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  flex-direction: ${(p) => p.flexDirection};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-  justify-content: ${(p) => p.justifycontent ?? 'space-between'};
-  align-items: ${(p) => p.alignitems ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -66,17 +69,17 @@ export interface IBox extends IRow {
   br?: string
   boxShadow?: string
   border?: string
-
-}
+  }
 export const Box = styled.div<IBox>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'block'};
-  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  flex-direction: ${(p) => p.flexDirection};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow:${(p) => p.boxShadow};
-  justify-content: ${(p) => p.justifycontent ?? 'space-between'};
-  align-items: ${(p) => p.alignitems ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -99,13 +102,14 @@ export interface ICol extends IBox {
 }
 export const Col = styled.div<ICol>`
   display: ${(p) => p.display ?? 'block'};
-  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-  justify-content: ${(p) => p.justifycontent ?? 'space-between'};
-  align-items: ${(p) => p.alignitems ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
+  flex-direction: ${(p) => p.flexDirection};
   flex-basis:${(p) => p.size == 1 ? `calc(8.3% - ${p.spacing ?? '15px'})` :
     p.size == 2 ? `calc(16.6% - ${p.spacing ?? '15px'})` :
       p.size == 3 ? `calc(25% - ${p.spacing ?? '15px'})` :
@@ -141,12 +145,13 @@ export const Section = styled.section<ISection>`
   flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
   flex: ${(p) => p.flex};
   display: ${(p) => p.display ?? 'block'};
-  justify-content: ${(p) => p.justifycontent ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  flex-direction: ${(p) => p.flexDirection};
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-  justify-content: ${(p) => p.justifycontent ?? 'space-between'};
-  align-items: ${(p) => p.alignitems ?? 'center'};
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

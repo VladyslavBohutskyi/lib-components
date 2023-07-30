@@ -6,7 +6,7 @@ import { Image } from "../../../my-lib/components/image"
 import { H3, P, H1 } from "../../../my-lib/components/typography"
 import { Box, Col, Container, Row } from "../../../my-lib/layout"
 
-const Blocks = () => {
+const BlocksPopUp = () => {
   const [openPopup, setOpenPopup] = useState(false)
   const [openAllow, setOpenAllow] = useState(false)
 
@@ -63,4 +63,4 @@ const Blocks = () => {
 }
 
 
-export default Blocks
+export default BlocksPopUp

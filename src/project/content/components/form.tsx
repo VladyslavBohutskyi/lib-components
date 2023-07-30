@@ -3,7 +3,7 @@ import { Form, Input, Textarea } from "../../../my-lib/components/form"
 import { List, ListItem } from "../../../my-lib/components/list"
 import { Box, Container } from "../../../my-lib/layout"
 
-const Components = () => {
+const ComponentsForm = () => {
   return (
     <Container mt="35px">
       <Form maxW='600px' m='auto' shadow="true" minH="200px" br="6px" p="30px">
@@ -34,4 +34,4 @@ const Components = () => {
 }
 
 
-export default Components
+export default ComponentsForm
