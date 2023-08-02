@@ -33,6 +33,14 @@ export interface IProportions {
   maxW?: string
 }
 
+export interface IShadowBorder {
+  br?: string
+  activeColor?: string
+  shadow?: string
+  border?: string
+  shadowColor?: string
+}
+
 
 export const PropsGlobal = styled.div<IGlobal>`
   color: ${(p) => p.color};
@@ -63,6 +71,11 @@ export const PropsFlex = styled.div<IDisplay>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
+`
+export const ShadowBorder = styled.div<IShadowBorder>`
+  border-radius: ${(p) => p.br};
+  box-shadow: ${(p) => p.shadow};
+  border: ${(p) => p.border};
 `
 
 
