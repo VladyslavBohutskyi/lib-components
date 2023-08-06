@@ -1,19 +1,20 @@
 import styled from 'styled-components';
-import { IGlobal } from '../models/global';
+import { IFonts, IGlobal } from '../models/global';
 
 
-interface IP extends IGlobal{
-  fs?: string
-  ls?: string
-  fw?: number
-  lh?: string
+interface IP extends IGlobal , IFonts{
+
 }
 
 export const P = styled.p<IP>`
   font-size: ${(p)=> p.fs ?? '14px'};
-  font-weight: ${(p) => p.fw ?? 400};
+  font-weight: ${(p) => p.fw};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -33,6 +34,10 @@ export const H1 = styled.h1<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -52,6 +57,10 @@ export const H2 = styled.h2<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -71,6 +80,10 @@ export const H3 = styled.h3<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -90,6 +103,10 @@ export const H4 = styled.h4<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -109,6 +126,10 @@ export const H5 = styled.h5<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -128,6 +149,10 @@ export const H6 = styled.h6<IP>`
   font-weight: ${(p) => p.fw ?? 500};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -144,9 +169,13 @@ export const H6 = styled.h6<IP>`
 `
 export const Span = styled.span<IP>`
   font-size: ${(p)=> p.fs ?? '14px'};
-  font-weight: ${(p) => p.fw ?? 500};
+  font-weight: ${(p) => p.fw};
   letter-spacing: ${(p) => p.ls};
   line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

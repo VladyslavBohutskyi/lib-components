@@ -1,20 +1,11 @@
 import styled from 'styled-components';
-import { IDisplay, IGlobal, IProportions } from '../models/global';
+import { IBorder, IDisplay, IGlobal, IProportions } from '../models/global';
 
 
+interface ITabsWrapper extends IDisplay, IProportions, IBorder, IGlobal {
 
-
-interface ITabsWrapper extends IGlobal, IDisplay, IProportions {
-  shadow?: string
-  shadowColor?: string
-  br?: string
-  border?: string
 }
 interface ITabs extends ITabsWrapper {
-  shadow?: string
-  shadowColor?: string
-  br?: string
-  border?: string
   fullW?: string
 }
 interface ITab extends IGlobal {
@@ -22,10 +13,7 @@ interface ITab extends IGlobal {
   active?: string
 }
 interface ITabsContent extends ITabsWrapper {
-  shadow?: string
-  shadowColor?: string
-  br?: string
-  border?: string
+
 }
 
 export const TabsWrapper = styled.section<ITabsWrapper>`
@@ -34,15 +22,25 @@ export const TabsWrapper = styled.section<ITabsWrapper>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
-  box-shadow: ${(p) => p.shadow ? `0px 0px 07px 1px ${p.shadowColor ?? 'grey'}` : false};
-  border: ${(p) => p.border};
-  border-radius: ${(p) => p.br};
+
   height: ${(p) => p.h};
   width: ${(p) => p.w};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
+  
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -58,23 +56,34 @@ export const TabsWrapper = styled.section<ITabsWrapper>`
   ${(p) => p.sx}   
 `
 export const Tabs = styled.ul<ITabs>`
+  li{
+    ${(p) => p.fullW ? 'flex:1 1 auto' : false} ;
+  }
+
   flex-wrap:  ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems}; 
   flex-direction: ${(p) => p.flexDirection};
-  li{
-    ${(p) => p.fullW ? 'flex:1 1 auto' : false} ;
-  }
-  box-shadow: ${(p) => p.shadow ? `0px 0px 07px 1px ${p.shadowColor ?? 'grey'}` : false};
-  border: ${(p) => p.border};
-  border-radius: ${(p) => p.br};
+  
   height: ${(p) => p.h};
   width: ${(p) => p.w};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
+  
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -103,6 +112,7 @@ export const Tab = styled.li<ITab>`
       text-align: center;
       ${p.active === 'true' ? 'border-bottom: 2px solid;' : p.active}
   `: false};
+  
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -123,15 +133,25 @@ export const TabsContent = styled.div<ITabsContent>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems}; 
   flex-direction: ${(p) => p.flexDirection};
-  box-shadow: ${(p) => p.shadow ? `0px 0px 07px 1px ${p.shadowColor ?? 'grey'}` : false};
-  border: ${(p) => p.border};
-  border-radius: ${(p) => p.br};
+   
   height: ${(p) => p.h};
   width: ${(p) => p.w};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
+  
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

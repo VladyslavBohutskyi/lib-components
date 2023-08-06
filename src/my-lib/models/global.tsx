@@ -33,14 +33,47 @@ export interface IProportions {
   maxW?: string
 }
 
-export interface IShadowBorder {
-  br?: string
+export interface IBorder {
   activeColor?: string
-  shadow?: string
+
   border?: string
+  br?: string
+  shadow?: 'variant-1' | 'variant-2' | 'variant-3' | 'variant-4' | 'variant-5' | 'variant-6'
+  customShadow?: string
   shadowColor?: string
 }
+export const ShadowBorder = styled.div<IBorder>`
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+`
 
+export interface IFonts {
+  fs?: string
+  fw?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
+  ls?: string
+  lh?: string
+  fontStyle?: 'italic'| 'normal' | 'unset'
+  textAlign?: 'left' | 'right' | 'center'
+  texttransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'unset'
+}
+
+export const Font = styled.div<IFonts>`
+  font-size: ${(p)=> p.fs};
+  font-weight: ${(p) => p.fw};
+  letter-spacing: ${(p) => p.ls};
+  line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+`
 
 export const PropsGlobal = styled.div<IGlobal>`
   color: ${(p) => p.color};
@@ -71,11 +104,6 @@ export const PropsFlex = styled.div<IDisplay>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
-`
-export const ShadowBorder = styled.div<IShadowBorder>`
-  border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.shadow};
-  border: ${(p) => p.border};
 `
 
 

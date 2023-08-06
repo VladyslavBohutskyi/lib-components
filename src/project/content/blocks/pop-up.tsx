@@ -15,7 +15,7 @@ const BlocksPopUp = () => {
       <Button onClick={() => setOpenPopup(!openPopup)} mb="20px">open popup</Button>
       <Button onClick={() => setOpenAllow(!openAllow)} mb="20px">open allow</Button>
       <PopUp open={openPopup} eclipseOpacity="0.4" p="20px" openPopupFunction={setOpenPopup}>
-        <Card shadow={'true'} minH="250px">
+        <Card shadow='variant-1' minH="250px">
           <CardHeader mb='15px' h="250px">
             <Image src="https://loremflickr.com/940/760" />
           </CardHeader>

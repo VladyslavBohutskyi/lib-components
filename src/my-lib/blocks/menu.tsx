@@ -1,16 +1,30 @@
 import styled from 'styled-components';
-import { IDisplay, IGlobal } from '../models/global';
+import { IDisplay, IFonts, IGlobal } from '../models/global';
 
 
-interface IMenu extends IGlobal, IDisplay {
+interface IMenu extends IDisplay, IFonts, IGlobal {
 
 }
+interface IMenuItem extends IMenu {
+
+}
+
+
 export const Menu = styled.ul<IMenu>`
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
   flex-direction: ${(p) => p.flexDirection};
+
+  font-size: ${(p) => p.fs};
+  font-weight: ${(p) => p.fw};
+  letter-spacing: ${(p) => p.ls};
+  line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
@@ -27,16 +41,21 @@ export const Menu = styled.ul<IMenu>`
 `
 
 
-interface IMenuItem extends IGlobal {
-  texttransform?: 'uppercase' | 'lowercase' | 'capitalize',
-  color?: string
-  fs?: string,
-  ls?: string,
-}
 export const MenuItem = styled.li<IMenuItem>`
+  flex-wrap: ${(p) => p.flexwrap};
+  display: ${(p) => p.display};
+  justify-content: ${(p) => p.justifycontent};
+  align-items: ${(p) => p.alignitems};
+  flex-direction: ${(p) => p.flexDirection};
+
   font-size: ${(p) => p.fs};
+  font-weight: ${(p) => p.fw};
   letter-spacing: ${(p) => p.ls};
+  line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
   text-transform: ${(p) => p.texttransform};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

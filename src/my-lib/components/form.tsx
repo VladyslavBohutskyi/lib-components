@@ -1,48 +1,57 @@
 import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { IDisplay, IGlobal, IProportions } from '../models/global';
+import { IBorder, IDisplay, IFonts, IGlobal, IProportions } from '../models/global';
 
-interface IInput extends IGlobal, InputHTMLAttributes<HTMLInputElement>, IDisplay, IProportions {
-  border?: string
-  br?: string
-  fs?: string
+interface IInput extends  InputHTMLAttributes<HTMLInputElement>, IDisplay, IProportions, IFonts, IBorder, IGlobal {
   placeholderColor?: string
-  ls?: string
-  lh?: string
-  fw?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
 }
 
 interface ITextarea extends IInput {
-  minH?: string
+  
 }
 
-interface IForm extends IGlobal, IDisplay, IProportions {
-  shadow?: string
-  shadowColor?: string
-  border?: string
-  br?: string
+interface IForm extends IGlobal, IDisplay, IProportions, IBorder {
+
 }
 
 export const Input = styled.input<IInput>`
   outline: none;
   transition: all 0.3s ease-in-out;
+  border-radius: ${(p) => p.br ?? '4px'};
+  border: ${(p) => p.border ?? '1px solid #ccc'};
+
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'};
   flex-direction: ${(p) => p.flexDirection};
-  line-height: ${(p) => p.lh}; 
-  font-weight: ${(p) => p.fw};
-  letter-spacing: ${(p) => p.ls}; 
-  font-size: ${(p) => p.fs};
-  border-radius: ${(p) => p.br ?? '4px'};
+  
   height: ${(p) => p.h};
   width: ${(p) => p.w ?? '100%'};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
-  border: ${(p) => p.border ?? '1px solid #ccc'};
+  
+  font-size: ${(p) => p.fs};
+  font-weight: ${(p) => p.fw};
+  letter-spacing: ${(p) => p.ls};
+  line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+  
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p ?? '8px 12px'}; 
@@ -65,24 +74,39 @@ export const Textarea = styled.textarea<ITextarea>`
   outline: none;
   transition: all 0.3s ease-in-out;
   resize: none;
+
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
-  min-height: ${(p) => p.minH};
-  line-height: ${(p) => p.lh}; 
-  font-weight: ${(p) => p.fw};
-  letter-spacing: ${(p) => p.ls}; 
-  font-size: ${(p) => p.fs};
-  border-radius: ${(p) => p.br ?? '4px'};
+  
   height: ${(p) => p.h};
   width: ${(p) => p.w ?? '100%'};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
+
+  font-size: ${(p) => p.fs};
+  font-weight: ${(p) => p.fw};
+  letter-spacing: ${(p) => p.ls};
+  line-height: ${(p) => p.lh};
+  font-style: ${(p) => p.fontStyle};
+  text-align: ${(p) => p.textAlign};
+  text-transform: ${(p) => p.texttransform};
+
   border: ${(p) => p.border ?? '1px solid #ccc'};
+  border-radius: ${(p) => p.br ?? '4px'};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p ?? '12px 14px'}; 
@@ -107,15 +131,25 @@ export const Form = styled.form<IForm>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
+
   height: ${(p) => p.h};
   width: ${(p) => p.w};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
-  box-shadow:${(p) => p.shadow ? `0px 0px 09px 1px ${p.shadowColor ?? 'grey'}` : false};
+
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  box-shadow: ${(p) => p.customShadow};
+  
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

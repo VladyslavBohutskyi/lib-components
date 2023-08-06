@@ -5,7 +5,7 @@ import { useState } from "react"
 import { log } from 'console';
 
 
-interface IPopUpContent extends IGlobal, IDisplay, IProportions {
+interface IPopUpContent extends IDisplay, IProportions, IGlobal {
 
 }
 interface IPopUpEclipse {
@@ -19,22 +19,23 @@ interface IPopUp extends IPopUpEclipse, IPopUpContent {
 }
 
 export const PopUpContent = styled.div<IPopUpContent>`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
-  position: fixed;
+
   height: ${(p) => p.h};
   width: ${(p) => p.w};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-/////////////////////////////////
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg ?? 'white'};
@@ -53,12 +54,12 @@ export const PopUpContent = styled.div<IPopUpContent>`
 
 export const PopUpEclipse = styled.div<IPopUpEclipse>`
   position: fixed;
-  background-color:  ${(p) => p.eclipseColor ?? 'black'};
-  opacity: ${(p) => p.eclipseOpacity ?? 0.8};
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
+  background-color:  ${(p) => p.eclipseColor ?? 'black'};
+  opacity: ${(p) => p.eclipseOpacity ?? 0.8};
 `
 
 export const PopUp = (props: IPopUp) => {

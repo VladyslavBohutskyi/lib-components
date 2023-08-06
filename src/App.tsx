@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './project/content/pages/home';
 import Header from './project/header';
 import Footer from './project/footer';
-import { Box, Col, Container, Row, Section } from './my-lib/layout';
+import { Col, Container, Row, Section } from './my-lib/layout';
 import SidebarLayout from './project/sidebar/sidebar-layout';
 import SidebarComponents from './project/sidebar/sidebar-components';
 import SidebarBlocks from './project/sidebar/sidebar-blocks';
@@ -48,7 +48,7 @@ function App() {
           </Col>
           <Col size={10} display='flex' flexDirection='column' >
             <Header />
-            <Section flex='1'>
+            <Section flex='1' p='25px 25px 25px 0px' >
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />

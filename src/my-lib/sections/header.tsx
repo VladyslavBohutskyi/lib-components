@@ -1,20 +1,20 @@
 import styled from 'styled-components'
-import { IBox } from '../layout'
+import { IDisplay, IGlobal } from '../models/global'
 
-interface IHeader extends IBox {
+interface IHeader extends IGlobal, IDisplay {
   minH?: string
 }
 
 export const LHeader = styled.header<IHeader>`
+min-height: ${(p) => p.minH ?? '100px'};
+
 flex-wrap: ${(p) => p.flexwrap};
 display: ${(p) => p.display ?? 'block'};
 justify-content: ${(p) => p.justifycontent ?? 'center'};
 align-items: ${(p) => p.alignitems ?? 'center'};
 flex-direction: ${(p) => p.flexDirection};
-border: ${(p) => p.border};
-border-radius: ${(p) => p.br};
-box-shadow: ${(p) => p.boxShadow};
-min-height: ${(p) => p.minH ?? '100px'};
+
+
 color: ${(p) => p.color};
 background: ${(p) => p.bg};
 padding: ${(p) => p.p}; 
@@ -27,4 +27,5 @@ margin-top:  ${(p) => p.mt};
 margin-right:  ${(p) => p.mr};
 margin-bottom:  ${(p) => p.mb};
 margin-left:  ${(p) => p.ml};
+${(p) => p.sx}
 `
