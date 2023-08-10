@@ -15,7 +15,7 @@ export const Menu = styled.ul<IMenu>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -46,7 +46,7 @@ export const MenuItem = styled.li<IMenuItem>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};

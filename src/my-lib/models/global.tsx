@@ -21,7 +21,7 @@ export interface IDisplay {
   justifycontent?: 'center' | 'space-between' | 'space-around' | 'flex-end' | 'flex-start' | 'left' | 'right'
   alignitems?: 'center' | 'flex-end' | 'flex-start'
   flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
-  flexDirection?: 'column' | 'row' | 'row-reverse' | 'column-reverse'
+  flexdirection?: 'column' | 'row' | 'row-reverse' | 'column-reverse'
 }
 
 export interface IProportions {
@@ -103,7 +103,7 @@ export const PropsFlex = styled.div<IDisplay>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 `
 
 

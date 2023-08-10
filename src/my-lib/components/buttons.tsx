@@ -24,7 +24,7 @@ export const Button = styled.button<IButton>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'center'};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -99,7 +99,7 @@ export const BtnLink = styled.a<IBtnLink>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'center'};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w};

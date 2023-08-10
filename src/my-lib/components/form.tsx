@@ -24,7 +24,7 @@ export const Input = styled.input<IInput>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w ?? '100%'};
@@ -79,7 +79,7 @@ export const Textarea = styled.textarea<ITextarea>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w ?? '100%'};
@@ -130,7 +130,7 @@ export const Form = styled.form<IForm>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};

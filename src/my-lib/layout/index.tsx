@@ -21,7 +21,7 @@ export const Row = styled.div<IRow>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -49,7 +49,7 @@ export const Container = styled.div<IContainer>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -77,7 +77,7 @@ export const Box = styled.div<IBox>`
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   align-items: ${(p) => p.alignitems};
 
   border: ${(p) => p.border};
@@ -109,7 +109,7 @@ export const Col = styled.div<ICol>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -155,7 +155,7 @@ export const Section = styled.section<ISection>`
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   align-items: ${(p) => p.alignitems};
 
   color: ${(p) => p.color};

@@ -13,7 +13,7 @@ flex-wrap: ${(p) => p.flexwrap};
 display: ${(p) => p.display};
 justify-content: ${(p) => p.justifycontent};
 align-items: ${(p) => p.alignitems ?? 'center'};
-flex-direction: ${(p) => p.flexDirection};
+flex-direction: ${(p) => p.flexdirection};
 
 color: ${(p) => p.color};
 background: ${(p) => p.bg};

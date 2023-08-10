@@ -13,7 +13,7 @@ const Footer = () => {
         <Row flexwrap='nowrap'>
 
           <Col size={3}>
-            <Avatar shadowHover="true" size={'70px'} shadow="true" sx={'border: 4px solid pink;'}>UI</Avatar>
+            <Avatar shadowhover="true" size={'70px'} shadow="true" sx={'border: 4px solid pink;'}>UI</Avatar>
           </Col>
 
           <Col size={3}>

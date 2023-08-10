@@ -38,7 +38,7 @@ function App() {
   return (
 
     <div className="App">
-      <Container fullwidth='true' pl='0' pr='0' bg={'white'}>
+      <Container fullwidth='true' pl='0' pr='0' bg='#f7f7f7'>
         <Row sx='min-height: 100vh;'>
           <Col size={2} bg='white'>
             <Routes>
@@ -49,7 +49,7 @@ function App() {
               <Route path='/sections/*' element={<SidebarSections />} />
             </Routes>
           </Col>
-          <Col size={10} display='flex' flexDirection='column' >
+          <Col size={10} display='flex' flexdirection='column' >
             <Header />
             <Section flex='1' p='25px 25px 25px 0px' >
               <Routes>

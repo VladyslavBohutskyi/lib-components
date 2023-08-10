@@ -21,7 +21,7 @@ export const TabsWrapper = styled.section<ITabsWrapper>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -64,7 +64,7 @@ export const Tabs = styled.ul<ITabs>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems}; 
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -132,7 +132,7 @@ export const TabsContent = styled.div<ITabsContent>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems}; 
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
    
   height: ${(p) => p.h};
   width: ${(p) => p.w};

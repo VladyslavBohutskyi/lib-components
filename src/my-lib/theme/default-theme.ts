@@ -12,4 +12,22 @@ const defaultTheme = {
   shadowColor: 'grey',
 }
 
+const homeTheme = {
+  primary: '#ebab2f',
+  fontPrimary: '#222121',
+
+  secondary: '#FFD95A',
+  fontSecondary: '#4c4c46',
+
+  paper: '#FFF7D4',
+  fontColor: 'black', 
+  
+  bg: '#f7f2da',
+  shadowColor: 'grey',
+}
+
+
+
+
+export {homeTheme}
 export {defaultTheme}

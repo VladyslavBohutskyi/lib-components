@@ -12,7 +12,7 @@ flex-wrap: ${(p) => p.flexwrap};
 display: ${(p) => p.display ?? 'block'};
 justify-content: ${(p) => p.justifycontent ?? 'center'};
 align-items: ${(p) => p.alignitems ?? 'center'};
-flex-direction: ${(p) => p.flexDirection};
+flex-direction: ${(p) => p.flexdirection};
 
 
 color: ${(p) => p.color};

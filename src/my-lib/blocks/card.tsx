@@ -16,7 +16,7 @@ export const Card = styled.article<ICard>`
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection ?? 'column'};
+  flex-direction: ${(p) => p.flexdirection ?? 'column'};
 
   height: ${(p) => p.h ?? '100%'};
   width: ${(p) => p.w};
@@ -59,7 +59,7 @@ export const CardHeader = styled.div<ICardInner>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -98,7 +98,7 @@ export const CardContent = styled.div<ICardInner>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -136,7 +136,7 @@ export const CardFooter = styled.div<ICardInner>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};

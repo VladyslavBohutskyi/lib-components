@@ -4,7 +4,7 @@ import { Button } from "../../my-lib/components/buttons"
 import { Avatar, Image } from "../../my-lib/components/image"
 import { Menu, MenuItem } from "../../my-lib/blocks/menu"
 import { LHeader } from "../../my-lib/sections/header"
-import { defaultTheme } from "../../my-lib/theme/default-theme"
+import { defaultTheme, homeTheme } from "../../my-lib/theme/default-theme"
 import { ThemeProvider } from "styled-components"
 
 
@@ -32,22 +32,20 @@ const Header = () => {
   }
 
   return (
-    <LHeader bg={'#FFFFFF'}>
+    <LHeader bg='#FFFFFF'>
       <Container>
-        <Row pt={'15px'} pb={'15px'} alignitems={'center'}>
-          <Box display={'flex'}>
-            <NavLink to={'/'}>
-              <Avatar size={'70px'} mr={'20px'}>
+        <Row pt='15px' pb='15px' alignitems='center'>
+          <Box display='flex'>
+            <NavLink to='/'>
+              <Avatar size='70px' mr='20px'>
                 <Image src="/logo.jpg" alt="logo" />
               </Avatar>
             </NavLink>
-              <Avatar size={'70px'} mr={'20px'} shadow='true'>
-                AA
-              </Avatar>
-            <Menu display={'flex'}>
+
+            <Menu display='flex'>
               {
                 meenuItems.map((e) => (
-                  <MenuItem key={e.link} texttransform={'capitalize'} fs={'18px'} color={'black'} ml={'20px'}>
+                  <MenuItem key={e.link} texttransform='capitalize' fs='18px' color='black' ml='20px'>
                     <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
                 ))
               }

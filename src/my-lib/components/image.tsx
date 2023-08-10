@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { IFonts, IGlobal, IProportions } from '../models/global';
+import { defaultTheme } from '../theme/default-theme';
 
 interface IAvatar extends IGlobal, IFonts {
   shadow?: string
   shadowColor?: string
   br?: string
   size?: string
-  shadowHover?: string
-  type?: 'primary' | 'secondary' 
+  shadowhover?: string
+  type?: 'primary' | 'secondary'
+  hover?: 'variant-1' | 'variant-2'
 }
 
 export interface IImage extends IProportions {
@@ -35,8 +37,18 @@ export const Avatar = styled.div<IAvatar>`
   text-align: ${(p) => p.textAlign};
   text-transform: ${(p) => p.texttransform};
 
-  color: ${(p) => p.color ?? p.theme.fontPrimary};
-  background: ${(p) => p.bg ?? p.theme.bg};
+  color: ${(p) => p.type === 'primary'
+    ? (p.color ?? p.theme.fontPrimary)
+    : p.type === 'secondary'
+      ? (p.color ?? p.theme.fontSecondary)
+      : p.color ?? p.theme.fontColor};
+
+  background: ${(p) => p.type === 'primary'
+    ? (p.bg ?? p.theme.primary)
+    : p.type === 'secondary'
+      ? (p.bg ?? p.theme.secondary)
+      : p.bg ?? p.theme.bg};
+
   padding: ${(p) => p.p}; 
   margin: ${(p) => p.m};
   padding-top:  ${(p) => p.pt};
@@ -51,7 +63,28 @@ export const Avatar = styled.div<IAvatar>`
   &:hover{
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: ${(p) => p.shadowHover ? `0px 0px 3px 5px ${p.shadowColor ?? p.theme.shadowColor}` : false};
+    box-shadow: ${(p) => p.shadowhover ? `0px 0px 15px 4px ${p.shadowColor ?? p.theme.shadowColor}` : false};
+
+    ${(p) => (p.hover === 'variant-1' && p.type === 'primary')
+    ? `color: ${p.bg ?? p.theme.primary};
+       background-color: ${p.color ?? p.theme.fontPrimary};`
+    : (p.hover === 'variant-1' && p.type === 'secondary')
+      ? `color: ${p.bg ?? p.theme.secondary};
+         background-color: ${p.color ?? p.theme.fontSecondary};`
+      : p.hover === 'variant-1'
+        ? `color: ${p.bg ?? p.theme.bg};
+           background-color: ${p.color ?? p.theme.fontColor};`
+
+        : (p.hover === 'variant-2' && p.type === 'primary')
+          ? `color: ${p.theme.fontSecondary};
+             background-color: ${p.theme.secondary};`
+          : (p.hover === 'variant-2' && p.type === 'secondary')
+            ? `color: ${p.theme.fontPrimary};
+               background-color: ${p.theme.primary};`
+            : p.hover === 'variant-2'
+              ? `color: ${p.theme.paper};
+                 background-color: ${p.theme.shadowColor};`
+              : false}
   }
 `
 
@@ -67,3 +100,7 @@ export const Image = styled.img<IImage>`
   object-position: ${(p) => p.op ?? 'center'};
   filter:  ${(p) => p.filter};
 `
+
+Avatar.defaultProps = {
+  theme: defaultTheme
+}

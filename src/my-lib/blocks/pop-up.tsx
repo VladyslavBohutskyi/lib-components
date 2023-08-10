@@ -28,7 +28,7 @@ export const PopUpContent = styled.div<IPopUpContent>`
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexDirection};
+  flex-direction: ${(p) => p.flexdirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
