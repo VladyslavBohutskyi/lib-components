@@ -4,6 +4,8 @@ import { Button } from "../../my-lib/components/buttons"
 import { Avatar, Image } from "../../my-lib/components/image"
 import { Menu, MenuItem } from "../../my-lib/blocks/menu"
 import { LHeader } from "../../my-lib/sections/header"
+import { defaultTheme } from "../../my-lib/theme/default-theme"
+import { ThemeProvider } from "styled-components"
 
 
 const meenuItems = [
@@ -14,6 +16,21 @@ const meenuItems = [
 ]
 
 const Header = () => {
+  const yellowTheme = {
+    ...defaultTheme,
+    primary: '#FFFEC4',
+    secondary: '#FFD65A',
+    fontPrimary: 'black',
+    fontSecondary: 'white',
+  }
+  const testTheme = {
+    ...defaultTheme,
+    primary: '#ed99d5',
+    secondary: '#ad36a3',
+    fontPrimary: 'black',
+    fontSecondary: 'white',
+  }
+
   return (
     <LHeader bg={'#FFFFFF'}>
       <Container>
@@ -24,6 +41,9 @@ const Header = () => {
                 <Image src="/logo.jpg" alt="logo" />
               </Avatar>
             </NavLink>
+              <Avatar size={'70px'} mr={'20px'} shadow='true'>
+                AA
+              </Avatar>
             <Menu display={'flex'}>
               {
                 meenuItems.map((e) => (
@@ -33,7 +53,12 @@ const Header = () => {
               }
             </Menu>
           </Box>
-          <Button hover="reverse">Read More</Button>
+          <ThemeProvider theme={defaultTheme}>
+            <Button hover="reverse">Read More</Button>
+            <Button hover='reverseBorder'>Read More</Button>
+            <Button hover='opacity'>Read More</Button>
+            <Button>Read More</Button>
+          </ThemeProvider>
         </Row>
       </Container>
     </LHeader>

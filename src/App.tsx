@@ -30,12 +30,15 @@ import BlocksTabs from './project/content/blocks/tabs';
 import SectionPage from './project/content/sections';
 import SectionsHeader from './project/content/sections/header';
 import SectionsFooter from './project/content/sections/footer';
+import { defaultTheme } from './my-lib/theme/default-theme';
+import { ThemeProvider } from 'styled-components';
 
 
 function App() {
   return (
+
     <div className="App">
-      <Container fullwidth='true' pl='0' pr='0' bg='#F9F9F9'>
+      <Container fullwidth='true' pl='0' pr='0' bg={'white'}>
         <Row sx='min-height: 100vh;'>
           <Col size={2} bg='white'>
             <Routes>
@@ -66,17 +69,17 @@ function App() {
                 <Route path='/components/form' element={<ComponentsForm />} />
                 <Route path='/components/images' element={<ComponentsImage />} />
                 <Route path='/components/list' element={<ComponentsList />} />
-                <Route path='/components/typography' element={<ComponentsTypography/>} />
+                <Route path='/components/typography' element={<ComponentsTypography />} />
 
-                <Route path='/blocks/*' element={<BlocksPage/>} />
-                <Route path='/blocks/card' element={<BlocksCard/>} />
-                <Route path='/blocks/menu' element={<BlocksMenu/>} />
-                <Route path='/blocks/pop-up' element={<BlocksPopUp/>} />
-                <Route path='/blocks/tabs' element={<BlocksTabs/>} />                                      
-                       
-                <Route path='/sections/*' element={<SectionPage/>} />
-                <Route path='/sections/header' element={<SectionsHeader/>} />
-                <Route path='/sections/footer' element={<SectionsFooter/>} />
+                <Route path='/blocks/*' element={<BlocksPage />} />
+                <Route path='/blocks/card' element={<BlocksCard />} />
+                <Route path='/blocks/menu' element={<BlocksMenu />} />
+                <Route path='/blocks/pop-up' element={<BlocksPopUp />} />
+                <Route path='/blocks/tabs' element={<BlocksTabs />} />
+
+                <Route path='/sections/*' element={<SectionPage />} />
+                <Route path='/sections/header' element={<SectionsHeader />} />
+                <Route path='/sections/footer' element={<SectionsFooter />} />
 
               </Routes>
             </Section>

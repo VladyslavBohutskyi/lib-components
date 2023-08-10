@@ -7,6 +7,7 @@ interface IAvatar extends IGlobal, IFonts {
   br?: string
   size?: string
   shadowHover?: string
+  type?: 'primary' | 'secondary' 
 }
 
 export interface IImage extends IProportions {
@@ -24,7 +25,7 @@ export const Avatar = styled.div<IAvatar>`
   width: ${(p) => p.size ?? '50px'};
   height: ${(p) => p.size ?? '50px'};
   border-radius: ${(p) => p.br ?? '50%'};
-  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? 'pink'}` : false};
+  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? p.theme.shadowColor}` : false};
 
   font-size: ${(p) => p.fs ?? '16px'};
   font-weight: ${(p) => p.fw};
@@ -34,8 +35,8 @@ export const Avatar = styled.div<IAvatar>`
   text-align: ${(p) => p.textAlign};
   text-transform: ${(p) => p.texttransform};
 
-  color: ${(p) => p.color};
-  background: ${(p) => p.bg};
+  color: ${(p) => p.color ?? p.theme.fontPrimary};
+  background: ${(p) => p.bg ?? p.theme.bg};
   padding: ${(p) => p.p}; 
   margin: ${(p) => p.m};
   padding-top:  ${(p) => p.pt};
@@ -50,7 +51,7 @@ export const Avatar = styled.div<IAvatar>`
   &:hover{
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: ${(p) => p.shadowHover ? `0px 0px 3px 5px ${p.shadowColor ?? 'pink'}` : false};
+    box-shadow: ${(p) => p.shadowHover ? `0px 0px 3px 5px ${p.shadowColor ?? p.theme.shadowColor}` : false};
   }
 `
 

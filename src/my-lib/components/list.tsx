@@ -16,7 +16,6 @@ interface IListItem extends IList {
 
 export const List = styled.ul<IList>`
 
-
   list-style: ${(p) => p.listStyle ?? 'none'};
   ${(p) => p.listStyle ? `
     & li{
