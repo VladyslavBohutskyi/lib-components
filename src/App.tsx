@@ -37,10 +37,10 @@ import { ThemeProvider } from 'styled-components';
 function App() {
   return (
 
-    <div className="App">
-      <Container fullwidth='true' pl='0' pr='0' bg='#f7f7f7'>
-        <Row sx='min-height: 100vh;'>
-          <Col size={2} bg='white'>
+    <div className='App'>
+      <Container fullwidth='true' pl='0' pr='0' bg='#f3f3f3'>
+        <Row sx='min-height: 100vh;' pr='15px'>
+          <Col size={2} bg='white' p='20px' pt='125px'>
             <Routes>
               <Route path='/*' element={<SidebarHome />} />
               <Route path='/layout/*' element={<SidebarLayout />} />
@@ -51,7 +51,7 @@ function App() {
           </Col>
           <Col size={10} display='flex' flexdirection='column' >
             <Header />
-            <Section flex='1' p='25px 25px 25px 0px' >
+            <Section flex='1'  m='25px 0 25px 0' bg='white' p='20px'>
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />

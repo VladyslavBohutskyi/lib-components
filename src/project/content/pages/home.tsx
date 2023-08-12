@@ -1,11 +1,10 @@
-import { ThemeProvider } from "styled-components"
-import { defaultTheme, homeTheme } from "../../../my-lib/theme/default-theme"
-import { Avatar } from "../../../my-lib/components/image"
-import { Row } from "../../../my-lib/layout"
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme, homeTheme } from '../../../my-lib/theme/default-theme'
+import { Avatar } from '../../../my-lib/components/image'
+import { Row } from '../../../my-lib/layout'
 
 
 const Home = () => {
-
   return (
     <>
     <ThemeProvider theme={defaultTheme}>
@@ -55,6 +54,4 @@ const Home = () => {
     </> 
   )
 }
-
-
 export default Home

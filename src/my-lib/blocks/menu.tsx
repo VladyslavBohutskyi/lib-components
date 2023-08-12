@@ -40,7 +40,6 @@ export const Menu = styled.ul<IMenu>`
   ${(p) => p.sx}
 `
 
-
 export const MenuItem = styled.li<IMenuItem>`
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};

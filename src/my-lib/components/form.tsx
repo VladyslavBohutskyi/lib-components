@@ -81,7 +81,7 @@ export const Textarea = styled.textarea<ITextarea>`
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexdirection};
   
-  height: ${(p) => p.h};
+  height: ${(p) => p.h ?? '150px'};
   width: ${(p) => p.w ?? '100%'};
   min-height: ${(p) => p.minH};
   min-width: ${(p) => p.minW};

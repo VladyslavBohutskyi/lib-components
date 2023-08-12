@@ -20,8 +20,8 @@ export default ComponentList
 
 
 
-// import { useState } from "react"
-// import { List2, ListItem2 } from "../../../my-lib/components/list2"
+// import { useState } from 'react'
+// import { List2, ListItem2 } from '../../../my-lib/components/list2'
 
 
 // const ComponentsList = () => {
@@ -51,21 +51,21 @@ export default ComponentList
 //           list.map((e, i) => (
 //             activeLi == i
 //             ?
-//             <ListItem p="5px" m="0px" before={e.icon}
-//             key={i} onClick={() => setActiveLi(i)} sx="cursor: pointer;" active="right">{e.text}</ListItem>
+//             <ListItem p='5px' m='0px' before={e.icon}
+//             key={i} onClick={() => setActiveLi(i)} sx='cursor: pointer;' active='right'>{e.text}</ListItem>
 //             :
-//             <ListItem p="10px" m="0px" before={e.icon}
-//             key={i} onClick={() => setActiveLi(i)} sx="cursor: pointer;">{e.text}</ListItem>
+//             <ListItem p='10px' m='0px' before={e.icon}
+//             key={i} onClick={() => setActiveLi(i)} sx='cursor: pointer;'>{e.text}</ListItem>
 //           ))
 //         }
 //       </List>
 
 
-//       <List sx="font-size: 40px;">
-//         <ListItem active='right' p="5px" activeColor='red' >Lorem, ipsum.</ListItem>
-//         <ListItem p="10px">Lorem, ipsum dolor.</ListItem>
-//         <ListItem p="8px" >Lorem, ipsum. bla</ListItem>
-//         <ListItem p="8px">White black yellow</ListItem>
+//       <List sx='font-size: 40px;'>
+//         <ListItem active='right' p='5px' activeColor='red' >Lorem, ipsum.</ListItem>
+//         <ListItem p='10px'>Lorem, ipsum dolor.</ListItem>
+//         <ListItem p='8px' >Lorem, ipsum. bla</ListItem>
+//         <ListItem p='8px'>White black yellow</ListItem>
 //       </List>
 
 //       <List customstyle='$'>

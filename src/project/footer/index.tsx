@@ -1,8 +1,8 @@
-import { Menu, MenuItem } from "../../my-lib/blocks/menu"
-import { Avatar } from "../../my-lib/components/image"
-import { H5 } from "../../my-lib/components/typography"
-import { Col, Container, Row } from "../../my-lib/layout"
-import { LFooter } from "../../my-lib/sections/footer"
+import { Menu, MenuItem } from '../../my-lib/blocks/menu'
+import { Avatar } from '../../my-lib/components/image'
+import { H5 } from '../../my-lib/components/typography'
+import { Col, Container, Row } from '../../my-lib/layout'
+import { LFooter } from '../../my-lib/sections/footer'
 
 
 
@@ -13,7 +13,7 @@ const Footer = () => {
         <Row flexwrap='nowrap'>
 
           <Col size={3}>
-            <Avatar shadowhover="true" size={'70px'} shadow="true" sx={'border: 4px solid pink;'}>UI</Avatar>
+            <Avatar shadowhover='true' size={'70px'} shadow='true' sx={'border: 4px solid pink;'}>UI</Avatar>
           </Col>
 
           <Col size={3}>

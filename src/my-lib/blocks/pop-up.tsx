@@ -64,7 +64,6 @@ export const PopUpEclipse = styled.div<IPopUpEclipse>`
 
 export const PopUp = (props: IPopUp) => {
 
-
   return (
     props.open ?
       <>

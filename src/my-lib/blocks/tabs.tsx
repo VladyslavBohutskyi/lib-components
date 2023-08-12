@@ -5,13 +5,16 @@ import { IBorder, IDisplay, IGlobal, IProportions } from '../models/global';
 interface ITabsWrapper extends IDisplay, IProportions, IBorder, IGlobal {
 
 }
+
 interface ITabs extends ITabsWrapper {
   fullW?: string
 }
+
 interface ITab extends IGlobal {
   tabs?: 'underline' | 'classic' | 'modern'
   active?: string
 }
+
 interface ITabsContent extends ITabsWrapper {
 
 }

@@ -3,10 +3,10 @@ import { IBorder, IDisplay, IFonts, IGlobal, IProportions } from '../models/glob
 import { defaultTheme } from '../theme/default-theme';
 
 
-
-
 interface IButton extends IDisplay, IProportions, IFonts, IBorder, IGlobal {
   hover?: 'reverse' | 'reverseBorder' | 'opacity'
+  hoverbg?: string
+  hovercolor?: string
   opacity?: number
 }
 
@@ -70,23 +70,22 @@ export const Button = styled.button<IButton>`
     ? p.color ?? p.theme.fontPrimary
     : p.hover == 'opacity'
     ? false
-    : p.theme.secondary};
+    : p.hoverbg ?? p.theme.secondary};
 
     color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' 
     ? p.bg ?? p.theme.primary 
     : p.hover == 'opacity'
     ? false
-    : p.theme.fontSecondary};
+    : p.hovercolor ?? p.theme.fontSecondary};
 
     border: ${(p) => p.hover === 'reverse' 
     ? `1px solid ${p.color ?? p.theme.fontPrimary}`
     : p.hover == ('reverseBorder' || 'opacity')
     ? `1px solid ${p.bg ?? p.theme.primary}`
-    : `1px solid ${p.theme.secondary}`};
+    : `1px solid ${p.hoverbg ?? p.theme.secondary}`};
     box-shadow: none;
     opacity: ${(p) => p.hover === 'opacity' ? 0.7 : false}
   }`
-
 
 export const BtnLink = styled.a<IBtnLink>`
   text-decoration: ${(p) => p.textDecoration ?? 'none'};
@@ -115,7 +114,6 @@ export const BtnLink = styled.a<IBtnLink>`
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
   text-transform: ${(p) => p.texttransform};
-  
   
   border: ${(p) => p.border ?? `1px solid ${p.bg ?? p.theme.primary}`};
   border-radius: ${(p) => p.br ?? '5px'};
@@ -146,19 +144,19 @@ export const BtnLink = styled.a<IBtnLink>`
     ? p.color ?? p.theme.fontPrimary
     : p.hover == 'opacity'
     ? false
-    : p.theme.secondary};
+    : p.hoverbg ?? p.theme.secondary};
 
     color: ${(p) => p.hover === 'reverse' || p.hover === 'reverseBorder' 
     ? p.bg ?? p.theme.primary 
     : p.hover == 'opacity'
     ? false
-    : p.theme.fontSecondary};
+    : p.hovercolor ?? p.theme.fontSecondary};
 
     border: ${(p) => p.hover === 'reverse' 
     ? `1px solid ${p.color ?? p.theme.fontPrimary}`
     : p.hover == ('reverseBorder' || 'opacity')
     ? `1px solid ${p.bg ?? p.theme.primary}`
-    : `1px solid ${p.theme.secondary}`};
+    : `1px solid ${p.hoverbg ?? p.theme.secondary}`};
     box-shadow: none;
     opacity: ${(p) => p.hover === 'opacity' ? 0.7 : false}
   }`

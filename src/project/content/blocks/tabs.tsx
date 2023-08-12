@@ -1,4 +1,4 @@
-import { Tab, Tabs, TabsContent, TabsWrapper } from "../../../my-lib/blocks/tabs"
+import { Tab, Tabs, TabsContent, TabsWrapper } from '../../../my-lib/blocks/tabs'
 import { useState } from 'react'
 
 
@@ -24,18 +24,18 @@ const BlocksTabs = () => {
   ]
 
   return (
-    <TabsWrapper maxW='600px' m="auto" bg="white" mt="30px">
-      <Tabs sx="text-transform: uppercase;" fullW="true">
+    <TabsWrapper maxW='600px' m='auto' bg='white' mt='30px'>
+      <Tabs sx='text-transform: uppercase;' fullW='true'>
         {
           dataTabs.map((e, index) => (
             tabIndex === index
               ?
               <Tab key={index} onClick={() => setTabIndex(index)}
-                  tabs="classic" active="true">
+                  tabs='classic' active='true'>
                 {e.tab}
               </Tab>
               :
-              <Tab tabs="classic" key={index} onClick={() => setTabIndex(index)}
+              <Tab tabs='classic' key={index} onClick={() => setTabIndex(index)}
               >
                 {e.tab}
               </Tab>
@@ -46,7 +46,7 @@ const BlocksTabs = () => {
         dataTabs.map((e, index) => (
           tabIndex === index
             ?
-            <TabsContent p="20px" key={index}>
+            <TabsContent p='20px' key={index}>
               {e.content}
             </TabsContent>
             :

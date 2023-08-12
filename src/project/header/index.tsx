@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom"
-import { Box, Container, Row } from "../../my-lib/layout"
-import { Button } from "../../my-lib/components/buttons"
-import { Avatar, Image } from "../../my-lib/components/image"
-import { Menu, MenuItem } from "../../my-lib/blocks/menu"
-import { LHeader } from "../../my-lib/sections/header"
-import { defaultTheme, homeTheme } from "../../my-lib/theme/default-theme"
-import { ThemeProvider } from "styled-components"
+import { NavLink } from 'react-router-dom'
+import { Box, Container, Row } from '../../my-lib/layout'
+import { Button } from '../../my-lib/components/buttons'
+import { Avatar, Image } from '../../my-lib/components/image'
+import { Menu, MenuItem } from '../../my-lib/blocks/menu'
+import { LHeader } from '../../my-lib/sections/header'
+import { defaultTheme, homeTheme } from '../../my-lib/theme/default-theme'
+import { ThemeProvider } from 'styled-components'
 
 
 const meenuItems = [
@@ -38,7 +38,7 @@ const Header = () => {
           <Box display='flex'>
             <NavLink to='/'>
               <Avatar size='70px' mr='20px'>
-                <Image src="/logo.jpg" alt="logo" />
+                <Image src='/logo.jpg' alt='logo' />
               </Avatar>
             </NavLink>
 
@@ -52,7 +52,7 @@ const Header = () => {
             </Menu>
           </Box>
           <ThemeProvider theme={defaultTheme}>
-            <Button hover="reverse">Read More</Button>
+            <Button hover='reverse'>Read More</Button>
             <Button hover='reverseBorder'>Read More</Button>
             <Button hover='opacity'>Read More</Button>
             <Button>Read More</Button>

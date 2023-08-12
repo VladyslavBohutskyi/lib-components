@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { IBorder, IDisplay, IFonts, IGlobal, IProportions } from '../models/global';
 
-
 interface ICard extends IDisplay, IProportions, IBorder, IGlobal {
 
 }
@@ -24,7 +23,6 @@ export const Card = styled.article<ICard>`
   min-width: ${(p) => p.minW};
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
-
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -168,4 +166,3 @@ export const CardFooter = styled.div<ICardInner>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 `
-

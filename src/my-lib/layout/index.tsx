@@ -114,18 +114,18 @@ export const Col = styled.div<ICol>`
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-  flex-basis:${(p) => p.size == 1 ? `calc(8.3% - ${p.spacing ?? '15px'})` :
-    p.size == 2 ? `calc(16.6% - ${p.spacing ?? '15px'})` :
-      p.size == 3 ? `calc(25% - ${p.spacing ?? '15px'})` :
-        p.size == 4 ? `calc(33.3% - ${p.spacing ?? '15px'})` :
-          p.size == 5 ? `calc(41.6% - ${p.spacing ?? '15px'})` :
-            p.size == 6 ? `calc(50% - ${p.spacing ?? '15px'})` :
-              p.size == 7 ? `calc(58.3% - ${p.spacing ?? '15px'})` :
-                p.size == 8 ? `calc(66.6% - ${p.spacing ?? '15px'})` :
-                  p.size == 9 ? `calc(75% - ${p.spacing ?? '15px'})` :
-                    p.size == 10 ? `calc(83.3% - ${p.spacing ?? '15px'})` :
-                      p.size == 11 ? `calc(91.6% - ${p.spacing ?? '15px'})` :
-                        p.size == 12 ? `calc(100% - ${p.spacing})` :
+  flex-basis:${(p) => p.size == 1 ? `calc(8.3% - ${p.spacing ?? '7px'})` :
+    p.size == 2 ? `calc(16.6% - ${p.spacing ?? '7px'})` :
+      p.size == 3 ? `calc(25% - ${p.spacing ?? '7px'})` :
+        p.size == 4 ? `calc(33.3% - ${p.spacing ?? '7px'})` :
+          p.size == 5 ? `calc(41.6% - ${p.spacing ?? '7px'})` :
+            p.size == 6 ? `calc(50% - ${p.spacing ?? '7px'})` :
+              p.size == 7 ? `calc(58.3% - ${p.spacing ?? '7px'})` :
+                p.size == 8 ? `calc(66.6% - ${p.spacing ?? '7px'})` :
+                  p.size == 9 ? `calc(75% - ${p.spacing ?? '7px'})` :
+                    p.size == 10 ? `calc(83.3% - ${p.spacing ?? '7px'})` :
+                      p.size == 11 ? `calc(91.6% - ${p.spacing ?? '7px'})` :
+                        p.size == 12 ? `calc(100% - ${p.spacing ?? '0px'})` :
                           'calc(100%)'
   };
 

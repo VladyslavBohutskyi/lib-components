@@ -27,7 +27,5 @@ const homeTheme = {
 }
 
 
-
-
 export {homeTheme}
 export {defaultTheme}

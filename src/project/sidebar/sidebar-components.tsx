@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom"
-import { Menu, MenuItem } from "../../my-lib/blocks/menu"
+import { NavLink } from 'react-router-dom'
+import { Menu, MenuItem } from '../../my-lib/blocks/menu'
 
 const SidebarComponents = () => {
   return (
