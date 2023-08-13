@@ -15,8 +15,8 @@ justify-content: ${(p) => p.justifycontent};
 align-items: ${(p) => p.alignitems ?? 'center'};
 flex-direction: ${(p) => p.flexdirection};
 
-color: ${(p) => p.color};
-background: ${(p) => p.bg};
+color: ${(p) => p.color ?? p.theme.fontColorBg};
+background: ${(p) => p.bg ?? p.theme.bgSecondary};
 padding: ${(p) => p.p}; 
 margin: ${(p) => p.m};
 padding-top:  ${(p) => p.pt};

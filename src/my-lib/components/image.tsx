@@ -16,6 +16,7 @@ export interface IImage extends IProportions {
   of?: 'contain' | 'cover' | 'fill' | 'inherit' | 'initial' | 'none' | 'revert' | 'scale-down' | 'unset'
   op?: 'center' | 'top' | 'bottom' | 'right' | 'left'
   filter?: string
+  sx?: string
 }
 
 export const Avatar = styled.div<IAvatar>`  
@@ -99,6 +100,8 @@ export const Image = styled.img<IImage>`
   object-fit: ${(p) => p.of ?? 'cover'};
   object-position: ${(p) => p.op ?? 'center'};
   filter:  ${(p) => p.filter};
+
+  ${(p) => p.sx}
 `
 
 Avatar.defaultProps = {

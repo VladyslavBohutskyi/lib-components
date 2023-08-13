@@ -8,7 +8,7 @@ import { defaultTheme, homeTheme } from '../../my-lib/theme/default-theme'
 import { ThemeProvider } from 'styled-components'
 
 
-const meenuItems = [
+const menuItems = [
   { link: '/layout', name: 'Layout' },
   { link: '/components', name: 'Components' },
   { link: '/blocks', name: 'Blocks' },
@@ -16,49 +16,20 @@ const meenuItems = [
 ]
 
 const Header = () => {
-  const yellowTheme = {
-    ...defaultTheme,
-    primary: '#FFFEC4',
-    secondary: '#FFD65A',
-    fontPrimary: 'black',
-    fontSecondary: 'white',
-  }
-  const testTheme = {
-    ...defaultTheme,
-    primary: '#ed99d5',
-    secondary: '#ad36a3',
-    fontPrimary: 'black',
-    fontSecondary: 'white',
-  }
 
   return (
-    <LHeader bg='#FFFFFF'>
-      <Container>
-        <Row pt='15px' pb='15px' alignitems='center'>
-          <Box display='flex'>
-            <NavLink to='/'>
-              <Avatar size='70px' mr='20px'>
-                <Image src='/logo.jpg' alt='logo' />
-              </Avatar>
-            </NavLink>
-
-            <Menu display='flex'>
+    <LHeader minH='86px' >
+        <Row  alignitems='center' p='20px 40px' sx='height: 100%;'>
+            <Menu>
               {
-                meenuItems.map((e) => (
-                  <MenuItem key={e.link} texttransform='capitalize' fs='18px' color='black' ml='20px'>
-                    <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
+                menuItems.map((e) => (
+                  <MenuItem key={e.link} texttransform='capitalize' fs='18px' color='white' mr='20px'>
+                  <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
                 ))
               }
             </Menu>
-          </Box>
-          <ThemeProvider theme={defaultTheme}>
-            <Button hover='reverse'>Read More</Button>
-            <Button hover='reverseBorder'>Read More</Button>
-            <Button hover='opacity'>Read More</Button>
             <Button>Read More</Button>
-          </ThemeProvider>
         </Row>
-      </Container>
     </LHeader>
   )
 }

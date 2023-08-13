@@ -12,6 +12,8 @@ interface IListItem extends IList {
   beforeTop?: string
   beforeRadius?: string
   beforeColor?: string
+  styledlink?: string
+  br?: string
 }
 
 export const List = styled.ul<IList>`
@@ -65,12 +67,20 @@ export const List = styled.ul<IList>`
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
+  & li {
+    color: ${(p) => p.color};
+    a{
+      color: ${(p) => p.color};
+      text-decoration: none;
+    }
+  }
 `
 
 export const ListItem = styled.li<IListItem>`
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: ${(p) => p.br};
 
   &:before{
   content: '${(p) => p.beforeContent}';
@@ -98,13 +108,73 @@ export const ListItem = styled.li<IListItem>`
           : false
   }
  }
+  ${(p) => p.styledlink ? `
+    & a{
+    width: 100%;
+    ${p.h ? `height: ${p.h};` : false};  
+    ${p.w ? `width: ${p.w};` : false};  
+    ${p.minH ? `min-height: ${p.minH};` : false};  
+    ${p.minW ? `min-width: ${p.minW};` : false};  
+    ${p.maxH ? `max-height: ${p.maxH};` : false};  
+    ${p.maxW ? `max-width: ${p.maxW};` : false};  
+      
+    ${p.fs ? `font-size: ${p.fs};` : false};  
+    ${p.fw ? `font-weight: ${p.fw};` : false};  
+    ${p.ls ? `letter-spacing: ${p.ls};` : false};  
+    ${p.lh ? `line-height: ${p.lh};` : false};  
+    ${p.fontStyle ? `font-style: ${p.fontStyle};` : false};  
+    ${p.textAlign ? `text-align: ${p.textAlign};` : false};  
+    ${p.texttransform ? `text-transform: ${p.texttransform};` : false};  
 
-  height: ${(p) => p.h};
-  width: ${(p) => p.w};
-  min-height: ${(p) => p.minH};
-  min-width: ${(p) => p.minW};
-  max-height: ${(p) => p.maxH};
-  max-width: ${(p) => p.maxW};
+    ${p.color ? `color: ${p.color};` : false};  
+    ${p.bg ? `background: ${p.bg};` : false};  
+    ${p.p ? `padding: ${p.p}; ` : false};  
+    ${p.m ? `margin: ${p.m};` : false};  
+    ${p.pt ? `padding-top:  ${p.pt};` : false};  
+    ${p.pr ? `padding-right:  ${p.pr};` : false};  
+    ${p.pb ? `padding-bottom:  ${p.pb};` : false}; 
+    ${p.pl ? `padding-left:  ${p.pl};` : false};  
+    ${p.mt ? `margin-top:  ${p.mt ?? '8px'};` : false};  
+    ${p.mr ? `margin-right:  ${p.mr};` : false};  
+    ${p.mb ? `margin-bottom:  ${p.mb};` : false};  
+    ${p.ml ? `margin-left:  ${p.ml};` : false};  
+    ${p.sx};
+      }
+    `
+    :
+    `
+    ${p.h ? `height: ${p.h};` : false};  
+    ${p.w ? `width: ${p.w};` : false};  
+    ${p.minH ? `min-height: ${p.minH};` : false};  
+    ${p.minW ? `min-width: ${p.minW};` : false};  
+    ${p.maxH ? `max-height: ${p.maxH};` : false};  
+    ${p.maxW ? `max-width: ${p.maxW};` : false};  
+
+    ${p.fs ? `font-size: ${p.fs};` : false};  
+    ${p.fw ? `font-weight: ${p.fw};` : false};  
+    ${p.ls ? `letter-spacing: ${p.ls};` : false};  
+    ${p.lh ? `line-height: ${p.lh};` : false}  
+    ${p.fontStyle ? `font-style: ${p.fontStyle};` : false};  
+    ${p.textAlign ? `text-align: ${p.textAlign};` : false};  
+    ${p.texttransform ? `text-transform: ${p.texttransform};` : false};  
+
+    ${p.color ? `color: ${p.color};` : false};  
+    ${p.bg ? `background: ${p.bg};` : false};  
+    ${p.p ? `padding: ${p.p}; ` : false};  
+    ${p.m ? `margin: ${p.m};` : false};  
+    ${p.pt ? `padding-top:  ${p.pt};` : false};  
+    ${p.pr ? `padding-right:  ${p.pr};` : false};  
+    ${p.pb ? `padding-bottom:  ${p.pb};` : false};  
+    ${p.pl ? `padding-left:  ${p.pl};` : false};  
+    ${p.mt ? `margin-top:  ${p.mt ?? '8px'};` : false};  
+    ${p.mr ? `margin-right:  ${p.mr};` : false};  
+    ${p.mb ? `margin-bottom:  ${p.mb};` : false};  
+    ${p.ml ? `margin-left:  ${p.ml};` : false};  
+    ${p.sx};
+    `
+  }
+
+
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -117,25 +187,7 @@ export const ListItem = styled.li<IListItem>`
             p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
 
-  font-size: ${(p) => p.fs};
-  font-weight: ${(p) => p.fw};
-  letter-spacing: ${(p) => p.ls};
-  line-height: ${(p) => p.lh};
-  font-style: ${(p) => p.fontStyle};
-  text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
-
-  color: ${(p) => p.color};
-  background: ${(p) => p.bg};
-  padding: ${(p) => p.p}; 
-  margin: ${(p) => p.m};
-  padding-top:  ${(p) => p.pt};
-  padding-right:  ${(p) => p.pr};
-  padding-bottom:  ${(p) => p.pb};
-  padding-left:  ${(p) => p.pl ?? '10px'};
-  margin-top:  ${(p) => p.mt ?? '8px'};
-  margin-right:  ${(p) => p.mr};
-  margin-bottom:  ${(p) => p.mb};
-  margin-left:  ${(p) => p.ml};
-  ${(p) => p.sx}
+  & a{
+    color: ${(p) => p.color};
+  }
 `

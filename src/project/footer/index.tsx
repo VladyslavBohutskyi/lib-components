@@ -8,7 +8,7 @@ import { LFooter } from '../../my-lib/sections/footer'
 
 const Footer = () => {
   return (
-    <LFooter bg={'#FFFFFF'} pt={'30px'} pb={'30px'}>
+    <LFooter  pt={'30px'} pb={'30px'} >
       <Container>
         <Row flexwrap='nowrap'>
 
