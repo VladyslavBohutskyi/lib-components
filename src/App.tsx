@@ -34,34 +34,35 @@ import { Image } from './my-lib/components/image';
 import { Separate } from './my-lib/components/separate';
 import { ThemeProvider } from 'styled-components';
 import { Theme } from './project/store/theme';
+import { Sidebar } from './my-lib/blocks/sidebar';
+import { observer } from 'mobx-react';
 
 
+const App = observer(() => {
 
-
-function App() {
-
-  
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme.curentTheme}>
       <div className='App'>
         <Container fullwidth='true' pl='0' pr='0'>
           <Row sx='min-height: 100vh;'>
             <Col size={2} spacing='0px'
               boxShadow='rgba(0, 0, 0, 0.15) 2px -1px 10px' sx='z-index: 2;'
-              bg={`linear-gradient(27deg, ${Theme.bgSecondary} 0%, ${Theme.bgPrimary} 100%)`}>
-              <Box p='17px 20px'>
-                <NavLink to='/'>
-                  <Image h='50px' w='auto' src='/logo.png' alt='logo' ></Image>
-                </NavLink>
-              </Box>
-              <Separate bg='white' mt='0px' mb='40px' />
-              <Routes>
-                <Route path='/*' element={<SidebarHome />} />
-                <Route path='/layout/*' element={<SidebarLayout />} />
-                <Route path='/components/*' element={<SidebarComponents />} />
-                <Route path='/blocks/*' element={<SidebarBlocks />} />
-                <Route path='/sections/*' element={<SidebarSections />} />
-              </Routes>
+            >
+              <Sidebar type='gradient'>
+                <Box p='17px 20px'>
+                  <NavLink to='/'>
+                    <Image h='50px' w='auto' src='/logo.png' alt='logo' ></Image>
+                  </NavLink>
+                </Box>
+                <Separate bg='white' mt='0px' mb='40px' />
+                <Routes>
+                  <Route path='/*' element={<SidebarHome />} />
+                  <Route path='/layout/*' element={<SidebarLayout />} />
+                  <Route path='/components/*' element={<SidebarComponents />} />
+                  <Route path='/blocks/*' element={<SidebarBlocks />} />
+                  <Route path='/sections/*' element={<SidebarSections />} />
+                </Routes>
+              </Sidebar>
             </Col>
             <Col size={10} spacing='0px' display='flex' flexdirection='column' >
               <Header />
@@ -104,6 +105,6 @@ function App() {
       </div>
     </ThemeProvider>
   );
-}
+})
 
 export default App;

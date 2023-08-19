@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { Menu, MenuItem } from '../../my-lib/blocks/menu'
 import { List, ListItem } from '../../my-lib/components/list'
+import { Theme } from '../store/theme'
 
 const menuItems = [
   { link: '/about', name: 'About' },
@@ -15,7 +16,7 @@ const SidebarHome = () => {
           menuItems.map((item) => (
             <ListItem key={item.link}
               br='5px' styledlink='true' beforeStyle='circle' beforeLeft='15px' beforeColor='white'
-              beforeSize='10px' mt='1px' p='23px 40px' ls='1px' bg='#587682'>
+              beforeSize='10px' mt='1px' p='23px 40px' ls='1px' bg={Theme.curentTheme.bgAccent}>
               <NavLink to={item.link}>{item.name}</NavLink></ListItem>
           ))
         }
