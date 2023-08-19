@@ -1,15 +1,14 @@
 import styled from 'styled-components';
-import { IDisplay, IGlobal } from '../models/global';
+import { IDisplay, IGlobal, IProportions } from '../models/global';
 
 export interface IRow extends IGlobal, IDisplay {
 }
 
-export interface IBox extends IGlobal, IDisplay {
+export interface IBox extends IGlobal, IDisplay, IProportions {
   br?: string
   boxShadow?: string
   border?: string
 }
-
 
 export interface IContainer extends IBox {
   flex?: string
@@ -41,10 +40,12 @@ export const Row = styled.div<IRow>`
 
 export const Container = styled.div<IContainer>`
   max-width: ${(p) => p.fullwidth === 'true' ? '100%' : '1300px'};
-  width: 100%;
-  margin: auto;
+  height: ${(p) => p.h};
+  width: ${(p) => p.w ?? '100%'};
+  min-height: ${(p) => p.minH};
+  max-height: ${(p) => p.maxH};
+  
   flex: ${(p) => p.flex};
-
   flex-wrap: ${(p) => p.flexwrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
@@ -54,11 +55,11 @@ export const Container = styled.div<IContainer>`
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow: ${(p) => p.boxShadow};
-
+  
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 
-  margin: ${(p) => p.m};
+  margin: ${(p) => p.m ?? 'auto'};
   padding-top:  ${(p) => p.pt};
   padding-right:  ${(p) => p.pr ?? '15px'};
   padding-bottom:  ${(p) => p.pb};
@@ -83,6 +84,13 @@ export const Box = styled.div<IBox>`
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow:${(p) => p.boxShadow};
+
+  height: ${(p) => p.h};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -110,6 +118,13 @@ export const Col = styled.div<ICol>`
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexdirection};
+
+  height: ${(p) => p.h};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -157,6 +172,13 @@ export const Section = styled.section<ISection>`
   justify-content: ${(p) => p.justifycontent};
   flex-direction: ${(p) => p.flexdirection};
   align-items: ${(p) => p.alignitems};
+
+  height: ${(p) => p.h};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};

@@ -10,6 +10,7 @@ import SidebarSections from './project/sidebar/sidebar-sections';
 import SidebarHome from './project/sidebar/sidebar-home';
 import About from './project/content/pages/about';
 import Contacts from './project/content/pages/contacts';
+import Customizer from './project/content/pages/customizer';
 import LayoutPage from './project/content/layout';
 import LayoutBox from './project/content/layout/box';
 import LayoutColumns from './project/content/layout/columns';
@@ -41,7 +42,7 @@ import { observer } from 'mobx-react';
 const App = observer(() => {
 
   return (
-    <ThemeProvider theme={Theme.curentTheme}>
+    <ThemeProvider theme={Theme.currentTheme}>
       <div className='App'>
         <Container fullwidth='true' pl='0' pr='0'>
           <Row sx='min-height: 100vh;'>
@@ -71,6 +72,7 @@ const App = observer(() => {
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/contact' element={<Contacts />} />
+                  <Route path='/customizer' element={<Customizer />} />
 
                   <Route path='/layout/*' element={<LayoutPage />} />
                   <Route path='/layout/box' element={<LayoutBox />} />

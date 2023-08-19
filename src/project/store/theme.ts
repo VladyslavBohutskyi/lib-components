@@ -9,18 +9,29 @@ class ThemeStore {
   }
 
   purpleTheme: ITheme = {
-    ...purpleTheme 
+    ...purpleTheme
   }
-  curentTheme: ITheme = {
+  currentTheme: ITheme = {
     ...defaultTheme
   }
-  setCurrentTheme(state: boolean){
-    state ? this.curentTheme = {...this.purpleTheme} : this.curentTheme = {...defaultTheme}
+
+
+  setCustomTheme(customTheme: ITheme) {
+   this.currentTheme = {...customTheme}
+   
   }
+
+
+  setCurrentTheme(state: boolean) {
+    state ? this.currentTheme = { ...this.purpleTheme } : this.currentTheme = { ...defaultTheme }
+  }
+
+
+
 }
 const Theme = new ThemeStore()
 
-export {Theme}
+export { Theme }
 
 
 
