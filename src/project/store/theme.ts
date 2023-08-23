@@ -12,7 +12,8 @@ class ThemeStore {
     ...purpleTheme
   }
   currentTheme: ITheme = {
-    ...defaultTheme
+    ...defaultTheme,
+  
   }
 
 

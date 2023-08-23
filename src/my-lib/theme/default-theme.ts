@@ -5,8 +5,6 @@ export interface ITheme {
   fontSecondary?: string,
   paper?: string,
   fontColor?: string,
-  shadowColor?: string,
-  bg?: string,
   fontColorBg?: string,
   bgPrimary?: string,
   bgSecondary?: string,
@@ -23,9 +21,6 @@ const defaultTheme: ITheme = {
   paper: '#FAF8F7',
   fontColor: '#465D76',
 
-  shadowColor: '#8CA5B5',
-  bg: '#ECF2FF',
-
   fontColorBg: '#FAF8F7',
   bgPrimary: '#8CA5B5',
   bgSecondary: '#2D3C4A',
@@ -40,10 +35,7 @@ const purpleTheme: ITheme = {
   fontSecondary: '#FAF8F7',
 
   paper: '#FAF8F7',
-  fontColor: '#465D76',
-
-  shadowColor: '#8CA5B5',
-  bg: '#ECF2FF',
+  fontColor: '#503852',
 
   fontColorBg: '#FAF8F7',
   bgPrimary: '#BE6C9F',
