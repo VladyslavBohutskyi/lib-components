@@ -16,11 +16,11 @@ export interface IContainer extends IBox {
 }
 
 export const Row = styled.div<IRow>`
-  flex-wrap: ${(p) => p.flexwrap ?? 'wrap'};
+  flex-wrap: ${(p) => p.flexWrap ?? 'wrap'};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -46,11 +46,11 @@ export const Container = styled.div<IContainer>`
   max-height: ${(p) => p.maxH};
   
   flex: ${(p) => p.flex};
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
@@ -75,10 +75,10 @@ export const Container = styled.div<IContainer>`
 
 export const Box = styled.div<IBox>`
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
   align-items: ${(p) => p.alignitems};
 
   border: ${(p) => p.border};
@@ -110,14 +110,14 @@ export const Box = styled.div<IBox>`
 export interface ICol extends IBox {
   size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
   spacing?: string
-  flexwrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
+  flexWrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
 }
 export const Col = styled.div<ICol>`
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -167,10 +167,10 @@ export const Section = styled.section<ISection>`
   box-shadow: ${(p) => p.boxShadow};
   flex: ${(p) => p.flex};
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
   align-items: ${(p) => p.alignitems};
 
   height: ${(p) => p.h};

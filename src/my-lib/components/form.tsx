@@ -20,11 +20,11 @@ export const Input = styled.input<IInput>`
   border-radius: ${(p) => p.br ?? '4px'};
   border: ${(p) => p.border ?? '1px solid #ccc'};
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
   
   height: ${(p) => p.h};
   width: ${(p) => p.w ?? '100%'};
@@ -39,17 +39,17 @@ export const Input = styled.input<IInput>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow:
-  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
-    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
-    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
-    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
   
   color: ${(p) => p.color};
@@ -75,11 +75,11 @@ export const Textarea = styled.textarea<ITextarea>`
   transition: all 0.3s ease-in-out;
   resize: none;
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
   
   height: ${(p) => p.h ?? '150px'};
   width: ${(p) => p.w ?? '100%'};
@@ -94,17 +94,17 @@ export const Textarea = styled.textarea<ITextarea>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   border: ${(p) => p.border ?? '1px solid #ccc'};
   border-radius: ${(p) => p.br ?? '4px'};
   box-shadow:
-  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
-    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
-    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
-    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
 
   color: ${(p) => p.color};
@@ -126,11 +126,11 @@ export const Textarea = styled.textarea<ITextarea>`
 `;
 
 export const Form = styled.form<IForm>`
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -142,12 +142,12 @@ export const Form = styled.form<IForm>`
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow:
-  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
-    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
-    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
-    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
   
   color: ${(p) => p.color};

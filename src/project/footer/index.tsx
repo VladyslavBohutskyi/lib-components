@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <LFooter  pt={'30px'} pb={'30px'} >
       <Container>
-        <Row flexwrap='nowrap'>
+        <Row flexWrap='nowrap'>
 
           <Col size={3}>
             <Avatar shadowhover='true' size={'70px'} shadow='true' sx={'border: 4px solid pink;'}>UI</Avatar>

@@ -24,11 +24,11 @@ export const PopUpContent = styled.div<IPopUpContent>`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};

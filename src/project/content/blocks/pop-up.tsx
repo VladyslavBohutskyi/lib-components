@@ -26,10 +26,10 @@ const BlocksPopUp = () => {
             </P>
           </CardContent>
           <CardFooter p='15px' display='flex' justifycontent='flex-start'>
-            <BtnLink texttransform='uppercase' mr='20px' hover={'reverseBorder'} textDecoration='none'>
+            <BtnLink textTransform='uppercase' mr='20px' hover={'reverseBorder'} textDecoration='none'>
               Read More
             </BtnLink>
-            <BtnLink texttransform='uppercase' hover={'reverseBorder'}>
+            <BtnLink textTransform='uppercase' hover={'reverseBorder'}>
               Subscribe
             </BtnLink>
           </CardFooter>

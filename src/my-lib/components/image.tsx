@@ -4,7 +4,7 @@ import { defaultTheme } from '../theme/default-theme';
 
 interface IAvatar extends IGlobal, IFonts {
   shadow?: string
-  shadowColor?: string
+  shadowcolor?: string
   br?: string
   size?: string
   shadowhover?: string
@@ -28,7 +28,7 @@ export const Avatar = styled.div<IAvatar>`
   width: ${(p) => p.size ?? '50px'};
   height: ${(p) => p.size ?? '50px'};
   border-radius: ${(p) => p.br ?? '50%'};
-  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowColor ?? p.theme.shadowColor}` : false};
+  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowcolor ?? p.theme.shadowcolor}` : false};
 
   font-size: ${(p) => p.fs ?? '16px'};
   font-weight: ${(p) => p.fw};
@@ -36,7 +36,7 @@ export const Avatar = styled.div<IAvatar>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.type === 'primary'
     ? (p.color ?? p.theme.fontPrimary)
@@ -64,7 +64,7 @@ export const Avatar = styled.div<IAvatar>`
   &:hover{
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: ${(p) => p.shadowhover ? `0px 0px 15px 4px ${p.shadowColor ?? p.theme.shadowColor}` : false};
+    box-shadow: ${(p) => p.shadowhover ? `0px 0px 15px 4px ${p.shadowcolor ?? p.theme.shadowcolor}` : false};
 
     ${(p) => (p.hover === 'variant-1' && p.type === 'primary')
     ? `color: ${p.bg ?? p.theme.primary};
@@ -84,7 +84,7 @@ export const Avatar = styled.div<IAvatar>`
                background-color: ${p.theme.primary};`
             : p.hover === 'variant-2'
               ? `color: ${p.theme.paper};
-                 background-color: ${p.theme.shadowColor};`
+                 background-color: ${p.theme.shadowcolor};`
               : false}
   }
 `

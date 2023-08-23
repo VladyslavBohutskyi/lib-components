@@ -15,10 +15,10 @@ export const Sidebar = styled.ul<ISidebar>`
   box-shadow: ${(p) => p.boxshadow ?? 'rgba(0, 0, 0, 0.15) 2px -1px 10px'};
   z-index: ${(p) => p.zindex ?? '1'};
   height: 100%;
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
   align-items: ${(p) => p.alignitems};
 
   color: ${(p) => p.color};

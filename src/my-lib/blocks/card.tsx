@@ -11,11 +11,11 @@ interface ICardInner extends IDisplay, IProportions, IFonts, IGlobal {
 }
 
 export const Card = styled.article<ICard>`
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection ?? 'column'};
+  flex-direction: ${(p) => p.flexDirection ?? 'column'};
 
   height: ${(p) => p.h ?? '100%'};
   width: ${(p) => p.w};
@@ -27,12 +27,12 @@ export const Card = styled.article<ICard>`
   border: ${(p) => p.border};
   border-radius: ${(p) => p.br};
   box-shadow:
-  ${(p) => p.shadow == 'variant-1' ? `${p.shadowColor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
-    p.shadow == 'variant-2' ? `${p.shadowColor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
-    p.shadow == 'variant-3' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-4' ? `${p.shadowColor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
-    p.shadow == 'variant-5' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
-    p.shadow == 'variant-6' ? `${p.shadowColor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
   
   color: ${(p) => p.color};
@@ -53,11 +53,11 @@ export const Card = styled.article<ICard>`
 export const CardHeader = styled.div<ICardInner>`
   flex: ${(p) => p.flex};
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -72,7 +72,7 @@ export const CardHeader = styled.div<ICardInner>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   border: ${(p) => p.border};
   color: ${(p) => p.color};
@@ -92,11 +92,11 @@ export const CardHeader = styled.div<ICardInner>`
 export const CardContent = styled.div<ICardInner>`
   flex: ${(p) => p.flex ?? '1'};
 
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -104,7 +104,7 @@ export const CardContent = styled.div<ICardInner>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -130,11 +130,11 @@ export const CardContent = styled.div<ICardInner>`
 export const CardFooter = styled.div<ICardInner>`
   flex: ${(p) => p.flex};
   
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent ?? 'space-between'};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -142,7 +142,7 @@ export const CardFooter = styled.div<ICardInner>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};

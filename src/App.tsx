@@ -65,7 +65,7 @@ const App = observer(() => {
                 </Routes>
               </Sidebar>
             </Col>
-            <Col size={10} spacing='0px' display='flex' flexdirection='column' >
+            <Col size={10} spacing='0px' display='flex' flexDirection='column' >
               <Header />
               <Section flex='1' bg='white' p='20px'>
                 <Routes>

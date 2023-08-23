@@ -9,11 +9,11 @@ interface IHeader extends IGlobal, IDisplay {
 export const LHeader = styled.header<IHeader>`
 min-height: ${(p) => p.minH ?? '100px'};
 
-flex-wrap: ${(p) => p.flexwrap};
+flex-wrap: ${(p) => p.flexWrap};
 display: ${(p) => p.display ?? 'block'};
 justify-content: ${(p) => p.justifycontent ?? 'center'};
 align-items: ${(p) => p.alignitems ?? 'center'};
-flex-direction: ${(p) => p.flexdirection};
+flex-direction: ${(p) => p.flexDirection};
 
 
 color: ${(p) => p.color ?? p.theme.fontColorBg};

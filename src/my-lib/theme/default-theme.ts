@@ -54,7 +54,7 @@ const homeTheme = {
   fontColor: 'black',
 
   bg: '#f7f2da',
-  shadowColor: 'grey',
+  shadowcolor: 'grey',
 }
 
 

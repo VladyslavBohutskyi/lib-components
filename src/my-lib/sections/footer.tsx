@@ -9,11 +9,11 @@ export const LFooter = styled.footer<IFooter>`
 
 min-height: ${(p) => p.minH ?? '80px'};
 
-flex-wrap: ${(p) => p.flexwrap};
+flex-wrap: ${(p) => p.flexWrap};
 display: ${(p) => p.display};
 justify-content: ${(p) => p.justifycontent};
 align-items: ${(p) => p.alignitems ?? 'center'};
-flex-direction: ${(p) => p.flexdirection};
+flex-direction: ${(p) => p.flexDirection};
 
 color: ${(p) => p.color ?? p.theme.fontColorBg};
 background: ${(p) => p.bg ?? p.theme.bgSecondary};

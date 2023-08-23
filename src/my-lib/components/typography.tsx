@@ -13,7 +13,7 @@ export const P = styled.p<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -36,7 +36,7 @@ export const H1 = styled.h1<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -59,7 +59,7 @@ export const H2 = styled.h2<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -82,7 +82,7 @@ export const H3 = styled.h3<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -105,7 +105,7 @@ export const H4 = styled.h4<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -128,7 +128,7 @@ export const H5 = styled.h5<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -151,7 +151,7 @@ export const H6 = styled.h6<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -174,7 +174,7 @@ export const Span = styled.span<IP>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};

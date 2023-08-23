@@ -26,7 +26,7 @@ const Header = () => {
         <Menu>
           {
             menuItems.map((e) => (
-              <MenuItem key={e.link} texttransform='capitalize' fs='18px' color='white' mr='20px'>
+              <MenuItem key={e.link} textTransform='capitalize' fs='18px' color='white' mr='20px'>
                 <NavLink to={e.link}>{e.name}</NavLink> </MenuItem>
             ))
           }

@@ -11,11 +11,11 @@ interface IMenuItem extends IMenu {
 
 
 export const Menu = styled.ul<IMenu>`
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display ?? 'flex'};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems ?? 'center'}; 
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -23,7 +23,7 @@ export const Menu = styled.ul<IMenu>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -41,11 +41,11 @@ export const Menu = styled.ul<IMenu>`
 `
 
 export const MenuItem = styled.li<IMenuItem>`
-  flex-wrap: ${(p) => p.flexwrap};
+  flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
   justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
-  flex-direction: ${(p) => p.flexdirection};
+  flex-direction: ${(p) => p.flexDirection};
 
   font-size: ${(p) => p.fs};
   font-weight: ${(p) => p.fw};
@@ -53,7 +53,7 @@ export const MenuItem = styled.li<IMenuItem>`
   line-height: ${(p) => p.lh};
   font-style: ${(p) => p.fontStyle};
   text-align: ${(p) => p.textAlign};
-  text-transform: ${(p) => p.texttransform};
+  text-transform: ${(p) => p.textTransform};
 
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -71,6 +71,6 @@ export const MenuItem = styled.li<IMenuItem>`
   a{
     color: ${(p) => p.color};
     text-decoration: none;
-    text-transform: ${(p) => p.texttransform};
+    text-transform: ${(p) => p.textTransform};
   }
 `
