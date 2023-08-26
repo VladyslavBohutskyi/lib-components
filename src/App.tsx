@@ -47,7 +47,7 @@ const App = observer(() => {
         <Container fullwidth='true' pl='0' pr='0'>
           <Row sx='min-height: 100vh;'>
             <Col size={2} spacing='0px'
-              boxShadow='rgba(0, 0, 0, 0.15) 2px -1px 10px' sx='z-index: 2;'
+              shadow='variant-6' sx='z-index: 2;'
             >
               <Sidebar type='gradient'>
                 <Box p='17px 20px'>

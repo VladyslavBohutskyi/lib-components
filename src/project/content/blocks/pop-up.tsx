@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Card, CardContent, CardFooter, CardHeader } from '../../../my-lib/blocks/card'
-import { PopUp, PopUpContent, PopUpEclipse } from '../../../my-lib/blocks/pop-up'
+import { PopUp } from '../../../my-lib/blocks/pop-up'
 import { BtnLink, Button } from '../../../my-lib/components/buttons'
 import { Image } from '../../../my-lib/components/image'
 import { H3, P, H1 } from '../../../my-lib/components/typography'
-import { Box, Col, Container, Row } from '../../../my-lib/layout'
+import { Container } from '../../../my-lib/layout'
 
 const BlocksPopUp = () => {
   const [openPopup, setOpenPopup] = useState(false)
@@ -48,12 +48,12 @@ const BlocksPopUp = () => {
             </P>
           </CardContent>
           <CardFooter display='flex' p='20px'>
-              <Button bg='orange'>
-                Yes
-              </Button>
-              <Button >
-                No
-              </Button>
+            <Button bg='orange'>
+              Yes
+            </Button>
+            <Button >
+              No
+            </Button>
           </CardFooter>
         </Card>
       </PopUp>

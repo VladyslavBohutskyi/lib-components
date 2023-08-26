@@ -1,18 +1,29 @@
 import styled from 'styled-components';
-import { IDisplay, IGlobal, IProportions } from '../models/global';
+import { IBorder, IDisplay, IGlobal, IProportions } from '../models/global';
 
 export interface IRow extends IGlobal, IDisplay {
 }
 
-export interface IBox extends IGlobal, IDisplay, IProportions {
-  br?: string
-  boxShadow?: string
-  border?: string
+export interface IBox extends IGlobal, IBorder, IDisplay, IProportions {
+
 }
 
-export interface IContainer extends IBox {
+export interface IContainer extends IGlobal, IBorder, IDisplay, IProportions {
   flex?: string
   fullwidth?: string
+}
+
+export interface ICol extends IGlobal, IBorder, IDisplay, IProportions {
+  size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+  spacing?: string
+  flexWrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
+}
+
+interface ISection extends IGlobal, IBorder, IDisplay, IProportions {
+  flex?: string
+}
+interface IPaper extends IBox {
+
 }
 
 export const Row = styled.div<IRow>`
@@ -37,7 +48,6 @@ export const Row = styled.div<IRow>`
   ${(p) => p.sx}
 `
 
-
 export const Container = styled.div<IContainer>`
   max-width: ${(p) => p.fullwidth === 'true' ? '100%' : '1300px'};
   height: ${(p) => p.h};
@@ -52,9 +62,17 @@ export const Container = styled.div<IContainer>`
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
 
-  border: ${(p) => p.border};
-  border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.boxShadow};
+  border:${(p) => p.border};
+  border-radius: ${(p) => p.br ?? '5px'};
+  box-shadow:${(p) => p.customShadow ? `0px 0px 9px ${p.shadowcolor ?? p.bg ?? p.theme.primary}` : false};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+      p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+        p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+          p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+            p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false
+  };
   
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
@@ -71,8 +89,6 @@ export const Container = styled.div<IContainer>`
   ${(p) => p.sx}
 `
 
-
-
 export const Box = styled.div<IBox>`
 
   flex-wrap: ${(p) => p.flexWrap};
@@ -81,9 +97,17 @@ export const Box = styled.div<IBox>`
   flex-direction: ${(p) => p.flexDirection};
   align-items: ${(p) => p.alignitems};
 
-  border: ${(p) => p.border};
+  border:${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow:${(p) => p.boxShadow};
+  box-shadow:${(p) => p.customShadow ? `0px 0px 9px ${p.shadowcolor ?? p.bg ?? p.theme.primary}` : false};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+      p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+        p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+          p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+            p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false
+  };
 
   height: ${(p) => p.h};
   width: ${(p) => p.w};
@@ -107,11 +131,6 @@ export const Box = styled.div<IBox>`
   ${(p) => p.sx}
 `
 
-export interface ICol extends IBox {
-  size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
-  spacing?: string
-  flexWrap?: 'wrap' | 'wrap-reverse' | 'nowrap' | 'inherit' | 'initial' | 'unset'
-}
 export const Col = styled.div<ICol>`
   flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
@@ -126,9 +145,18 @@ export const Col = styled.div<ICol>`
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
 
-  border: ${(p) => p.border};
+  border:${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.boxShadow};
+  box-shadow:${(p) => p.customShadow ? `0px 0px 9px ${p.shadowcolor ?? p.bg ?? p.theme.primary}` : false};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+      p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+        p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+          p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+            p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false
+  };
+
   flex-basis:${(p) => p.size == 1 ? `calc(8.333% - ${p.spacing ?? '7px'})` :
     p.size == 2 ? `calc(16.666% - ${p.spacing ?? '7px'})` :
       p.size == 3 ? `calc(25% - ${p.spacing ?? '7px'})` :
@@ -158,14 +186,20 @@ export const Col = styled.div<ICol>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 `
-interface ISection extends IBox {
-  flex?: string
-}
 export const Section = styled.section<ISection>`
-  border: ${(p) => p.border};
+    flex: ${(p) => p.flex};
+
+  border:${(p) => p.border};
   border-radius: ${(p) => p.br};
-  box-shadow: ${(p) => p.boxShadow};
-  flex: ${(p) => p.flex};
+  box-shadow:${(p) => p.customShadow ? `0px 0px 9px ${p.shadowcolor ?? p.bg ?? p.theme.primary}` : false};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+      p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+        p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+          p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+            p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false
+  };
 
   flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
@@ -180,8 +214,8 @@ export const Section = styled.section<ISection>`
   max-height: ${(p) => p.maxH};
   max-width: ${(p) => p.maxW};
 
-  color: ${(p) => p.color};
-  background: ${(p) => p.bg};
+  color: ${(p) => p.color ?? p.theme.mainColor};
+  background: ${(p) => p.bg ?? p.theme.mainbg};
   padding: ${(p) => p.p}; 
   margin: ${(p) => p.m};
   padding-top:  ${(p) => p.pt};
@@ -193,4 +227,44 @@ export const Section = styled.section<ISection>`
   margin-bottom:  ${(p) => p.mb};
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
+`
+
+export const Paper = styled.div<IPaper>`
+
+  flex-wrap: ${(p) => p.flexWrap};
+  display: ${(p) => p.display};
+  justify-content: ${(p) => p.justifycontent};
+  flex-direction: ${(p) => p.flexDirection};
+  align-items: ${(p) => p.alignitems};
+
+  border: ${(p) => p.border};
+  border-radius: ${(p) => p.br};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+    p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(103, 103, 103, 0.48)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+    p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+    p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
+
+  height: ${(p) => p.h ?? '100%'};
+  width: ${(p) => p.w};
+  min-height: ${(p) => p.minH};
+  min-width: ${(p) => p.minW};
+  max-height: ${(p) => p.maxH};
+  max-width: ${(p) => p.maxW};
+
+  color: ${(p) => p.color ?? p.theme.paperColor};
+  background: ${(p) => p.bg ?? p.theme.paperbg};
+  padding: ${(p) => p.p ?? '20px'}; 
+  margin: ${(p) => p.m};
+  padding-top:  ${(p) => p.pt};
+  padding-right:  ${(p) => p.pr};
+  padding-bottom:  ${(p) => p.pb};
+  padding-left:  ${(p) => p.pl};
+  margin-top:  ${(p) => p.mt};
+  margin-right:  ${(p) => p.mr};
+  margin-bottom:  ${(p) => p.mb};
+  margin-left:  ${(p) => p.ml};
+  ${(p) => p.sx};
 `

@@ -14,6 +14,14 @@ interface IForm extends IGlobal, IDisplay, IProportions, IBorder {
 
 }
 
+interface ICustomCheckbox {
+
+}
+
+export const CustomCheckbox = styled.input.attrs({type: 'checkbox'})<ICustomCheckbox>`
+  
+`
+
 export const Input = styled.input<IInput>`
   outline: none;
   transition: all 0.3s ease-in-out;

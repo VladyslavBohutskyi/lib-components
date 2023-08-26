@@ -35,8 +35,8 @@ export const Card = styled.article<ICard>`
     p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false};
   box-shadow: ${(p) => p.customShadow};
   
-  color: ${(p) => p.color};
-  background: ${(p) => p.bg};
+  color: ${(p) => p.color ?? p.theme.paperColor};
+  background: ${(p) => p.bg ?? p.theme.paperbg};
   padding: ${(p) => p.p}; 
   margin: ${(p) => p.m};
   padding-top:  ${(p) => p.pt};

@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import { IFonts, IGlobal, IProportions } from '../models/global';
+import { IBorder, IFonts, IGlobal, IProportions } from '../models/global';
 import { defaultTheme } from '../theme/default-theme';
 
-interface IAvatar extends IGlobal, IFonts {
-  shadow?: string
-  shadowcolor?: string
-  br?: string
+interface IAvatar extends IGlobal, IFonts, IBorder {
   size?: string
   shadowhover?: string
   type?: 'primary' | 'secondary'
@@ -27,8 +24,18 @@ export const Avatar = styled.div<IAvatar>`
   transition: all 0.3s ease-in-out;
   width: ${(p) => p.size ?? '50px'};
   height: ${(p) => p.size ?? '50px'};
+
+  border:${(p) => p.border ?? `1px solid ${p.bg ?? p.theme.primary}`};
   border-radius: ${(p) => p.br ?? '50%'};
-  box-shadow:${(p) => p.shadow ? `0px 0px 9px ${p.shadowcolor ?? p.theme.shadowcolor}` : false};
+  box-shadow:${(p) => p.customShadow ? `0px 0px 9px ${p.shadowcolor ?? p.bg ?? p.theme.primary}` : false};
+  box-shadow:
+  ${(p) => p.shadow == 'variant-1' ? `${p.shadowcolor ?? 'rgba(100, 100, 111, 0.2)'} 0px 7px 29px 0px;` :
+    p.shadow == 'variant-2' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 0px 2px 8px 0px;` :
+      p.shadow == 'variant-3' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.05)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+        p.shadow == 'variant-4' ? `${p.shadowcolor ?? 'rgba(99, 99, 99, 0.2)'} 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;` :
+          p.shadow == 'variant-5' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 2.4px 2.4px 3.2px;` :
+            p.shadow == 'variant-6' ? `${p.shadowcolor ?? 'rgba(0, 0, 0, 0.15)'} 0px 2px 8px 0px, rgba(0, 0, 0, 0.05) 0px 5px 10px` : false
+  };
 
   font-size: ${(p) => p.fs ?? '16px'};
   font-weight: ${(p) => p.fw};
