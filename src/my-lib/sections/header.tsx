@@ -15,7 +15,6 @@ justify-content: ${(p) => p.justifycontent ?? 'center'};
 align-items: ${(p) => p.alignitems ?? 'center'};
 flex-direction: ${(p) => p.flexDirection};
 
-
 color: ${(p) => p.color ?? p.theme.fontColorBg};
 background: ${(p) => p.bg ?? p.theme.bgPrimary};
 padding: ${(p) => p.p}; 
@@ -31,6 +30,3 @@ margin-left:  ${(p) => p.ml};
 ${(p) => p.sx}
 `
 
-LHeader.defaultProps = {
-  theme: defaultTheme
-}

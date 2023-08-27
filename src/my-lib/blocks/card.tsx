@@ -132,7 +132,7 @@ export const CardFooter = styled.div<ICardInner>`
   
   flex-wrap: ${(p) => p.flexWrap};
   display: ${(p) => p.display};
-  justify-content: ${(p) => p.justifycontent ?? 'space-between'};
+  justify-content: ${(p) => p.justifycontent};
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
 

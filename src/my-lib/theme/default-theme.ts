@@ -44,7 +44,7 @@ const purpleTheme:ITheme = {
   fontSecondary: '#FAF8F7',
 
   mainbg: '#F3F6F9',
-  mainColor: 'black',
+  mainColor: '#000000',
 
   paperbg: '#FAF8F7',
   paperColor: '#503852',

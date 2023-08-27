@@ -29,6 +29,11 @@ export const P = styled.p<IP>`
   margin-left:  ${(p) => p.ml};
   ${(p) => p.sx}
 `
+
+export const Text = styled(P)`
+  font-size: ${(p)=> p.fs ?? '25px'};
+`
+
 export const H1 = styled.h1<IP>`
   font-size: ${(p)=> p.fs ?? '40px'};
   font-weight: ${(p) => p.fw ?? 500};

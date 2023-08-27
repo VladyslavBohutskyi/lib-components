@@ -33,6 +33,8 @@ export const Row = styled.div<IRow>`
   align-items: ${(p) => p.alignitems};
   flex-direction: ${(p) => p.flexDirection};
 
+
+
   color: ${(p) => p.color};
   background: ${(p) => p.bg};
   padding: ${(p) => p.p}; 

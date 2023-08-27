@@ -139,7 +139,7 @@ const Customizer = observer(() => {
                 </Box>
               </Box>
             </Col>
-            <Col size={2} >
+            <Col size={2}>
               <H6 fs='18px' mt='15px'>bg Primary</H6>
               <Box mt='5px' display='flex' alignitems='center' h='45px' shadow='variant-6'>
                 <Box sx='overflow: hidden; flex: 0 0 auto;' w='45px' h='100%' shadow='variant-6'>
